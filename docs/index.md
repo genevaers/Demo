@@ -1,6 +1,6 @@
 # GenevaERS Demonstration documentation
 
-$ This is a Testing placeholder only.
+$ This us a test only.
 
 
  See [another page](Dummy.md)
