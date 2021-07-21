@@ -18,3 +18,7 @@ Use this program to generate large amounts of data to test GenevaERS.
 ## Useful links
 
 [Link to home](index.md)
+
+[Install the Demo](InstallDemo.md)
+
+[What the Demo does](WhatDemoDoes.md)
