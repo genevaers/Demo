@@ -1,11 +1,13 @@
-# GenevaERS Demonstration documentation
+# GenevaERS Demo - home for documentation
 
-Chooses from the following links:
+Choose from the following:
+
+[What is GenevaERS?](IntroGenevaERS.md)
 
 
  [Install the Demo](InstallDemo.md)
 
- [What the Demo does](WhatInDemo.md)
+ [What the Demo does](WhatDemoDoes.md)
 
  [Data Generator](DataGenerator.md)
  
