@@ -1,7 +1,10 @@
 # GenevaERS Demonstration documentation
 
-$ This us a test only.
+Chooses from the following links:
 
 
- See [another page](Dummy.md)
+ [Install the Demo](InstallDemo.md)
+ [What the Demo does](WhatInDemo.md)
+ [Data Generator](DataGenerator.md)
+
 
