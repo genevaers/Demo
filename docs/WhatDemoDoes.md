@@ -12,4 +12,4 @@
 
 [Install the Demo](InstallDemo.md)
 
-[Data Generator](DataGenerator.md)****
+[Data Generator](DataGenerator.md)
