@@ -1,6 +1,8 @@
 # How to install the GenevaERS Demo
 
-\(Place instructions to install here.\)
+-----
+
+\(Place instructions to install demo here.\)
 
 -----
 
