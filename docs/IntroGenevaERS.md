@@ -8,7 +8,7 @@ GenevaERS did it in **less than one hour** - on the same data on the same comput
 
 How is that possible?
 
-Reads from disk are 1000 times slower than calculations.  Too many reads is slow.
+Reads from disk are 1000 times slower than calculations.  Too many reads waste time.
 
 Example: a product file has 1,000 records and a sales file has a million records.  A report program reads the product file for each sales transaction.  
 
@@ -21,3 +21,7 @@ You could fix this by rewriting your programs.
 GenevaERS is free and does the programming for you.  
 
 A paid version is even faster using special features.
+
+
+
+[Link back to home](index.md)
