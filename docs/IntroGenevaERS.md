@@ -24,4 +24,8 @@ A paid version is even faster using special features.
 
 
 
-[Link back to home](index.md)
+-----
+
+## Useful links
+
+[Link to home](index.md)
