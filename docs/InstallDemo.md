@@ -8,7 +8,7 @@
 
 ## Useful links
 
-[Link to home](index.md)
+[Home](index.md)
 
 [What the Demo does](WhatDemoDoes.md)
 
