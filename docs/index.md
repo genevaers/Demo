@@ -1,8 +1,9 @@
-# GenevaERS Demo - home for documentation
+# GenevaERS Demo - documentation home
 
 Choose from the following:
 
 [What is GenevaERS?](IntroGenevaERS.md)
+
 
 
  [Install the Demo](InstallDemo.md)
