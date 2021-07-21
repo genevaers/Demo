@@ -9,3 +9,7 @@
 ## Useful links
 
 [Link to home](index.md)
+
+[Install the Demo](InstallDemo.md)
+
+[Data Generator](DataGenerator.md)****
