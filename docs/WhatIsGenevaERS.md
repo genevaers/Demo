@@ -29,3 +29,5 @@ A paid version is even faster using special features.
 ## Useful links
 
 [Link to home](index.md)
+
+[Install the Demo](InstallDemo.md)
