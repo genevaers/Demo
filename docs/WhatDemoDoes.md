@@ -1,5 +1,5 @@
 # What the Demo does
 
-Information on demo views and processing.
+(Place info on demo views here.)
 
 [Link to home](index.md)
