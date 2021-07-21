@@ -1,5 +1,7 @@
 # What the Demo does
 
+-----
+
 \(Place info on demo views here.\)
 
 -----
