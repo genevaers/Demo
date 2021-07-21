@@ -1,6 +1,7 @@
 # Data Generator
 
-This is a program that can generate large amounts of data for testing of GenevaERS.
+ThE Data Generator program is called GVBDTGEN.
+This program generates large amounts of data for testing of GenevaERS.
 
 \(Place instructions on Data Generator here.\)
 
