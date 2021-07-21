@@ -1,9 +1,12 @@
 # GenevaERS Demo - documentation home
 
+-----
+
 ## Introduction
 
 [What is GenevaERS?](IntroGenevaERS.md)
 
+-----
 
 ## Demo topics
 

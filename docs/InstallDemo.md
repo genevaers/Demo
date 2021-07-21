@@ -2,4 +2,8 @@
 
 \(Place instructions to install here.\)
 
-[Link back to home](index.md)
+-----
+
+## Useful links
+
+[Link to home](index.md)
