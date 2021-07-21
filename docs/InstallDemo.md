@@ -1,4 +1,4 @@
-# How to install the GenevaERS Demo
+# Install GenevaERS Demo
 
 -----
 
