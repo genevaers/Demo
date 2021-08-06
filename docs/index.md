@@ -1,12 +1,15 @@
-# GenevaERS Demo - documentation home
+---
+layout: home
+---
 
------
+File is index.md in root of demo docs
+
+# GenevaERS Demo - documentation home
 
 ## Introduction
 
 [What is GenevaERS?](WhatIsGenevaERS.md)
 
------
 
 ## Demo topics
 
@@ -16,5 +19,4 @@
 
  [Data Generator](DataGenerator.md)
  
------
 
