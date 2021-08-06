@@ -1,8 +1,3 @@
----
-layout: home
----
-
-File is index.md in root of demo docs
 
 # GenevaERS Demo - documentation home
 
