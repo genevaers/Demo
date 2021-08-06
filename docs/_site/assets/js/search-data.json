@@ -71,19 +71,19 @@
     "url": "http://localhost:4000/demo/about/",
     "relUrl": "/about/"
   },"12": {
-    "doc": "GenevaERS Demo - documentation home",
-    "title": "GenevaERS Demo - documentation home",
+    "doc": "Home",
+    "title": "Home",
     "content": " ",
     "url": "http://localhost:4000/demo/",
     "relUrl": "/"
   },"13": {
-    "doc": "GenevaERS Demo - documentation home",
+    "doc": "Home",
     "title": "Introduction",
     "content": "What is GenevaERS? . ",
     "url": "http://localhost:4000/demo/#introduction",
     "relUrl": "/#introduction"
   },"14": {
-    "doc": "GenevaERS Demo - documentation home",
+    "doc": "Home",
     "title": "Demo topics",
     "content": "Install the Demo . What the Demo does . Data Generator . ",
     "url": "http://localhost:4000/demo/#demo-topics",
