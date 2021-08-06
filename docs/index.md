@@ -2,7 +2,7 @@
 layout: home
 ---
 
-# GenevaERS Demo - documentation home
+# Home
 
 ## Introduction
 
