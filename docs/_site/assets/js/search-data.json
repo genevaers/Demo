@@ -1,0 +1,80 @@
+{"0": {
+    "doc": "Data Generator",
+    "title": "Data Generator",
+    "content": ". ",
+    "url": "http://localhost:4000/DataGenerator.html",
+    "relUrl": "/DataGenerator.html"
+  },"1": {
+    "doc": "Data Generator",
+    "title": "Introduction",
+    "content": "The Data Generator program is called GVBDTGEN. Use this program to generate large amounts of data to test GenevaERS. ",
+    "url": "http://localhost:4000/DataGenerator.html#introduction",
+    "relUrl": "/DataGenerator.html#introduction"
+  },"2": {
+    "doc": "Data Generator",
+    "title": "How to use the Data Generator",
+    "content": "(Place instructions on Data Generator here.) . ",
+    "url": "http://localhost:4000/DataGenerator.html#how-to-use-the-data-generator",
+    "relUrl": "/DataGenerator.html#how-to-use-the-data-generator"
+  },"3": {
+    "doc": "Data Generator",
+    "title": "Useful links",
+    "content": "Home . Install the Demo . What the Demo does . ",
+    "url": "http://localhost:4000/DataGenerator.html#useful-links",
+    "relUrl": "/DataGenerator.html#useful-links"
+  },"4": {
+    "doc": "Install GenevaERS Demo",
+    "title": "Install GenevaERS Demo",
+    "content": ". (Place instructions to install demo here.) . ",
+    "url": "http://localhost:4000/InstallDemo.html",
+    "relUrl": "/InstallDemo.html"
+  },"5": {
+    "doc": "Install GenevaERS Demo",
+    "title": "Useful links",
+    "content": "Home . What the Demo does . Data Generator . ",
+    "url": "http://localhost:4000/InstallDemo.html#useful-links",
+    "relUrl": "/InstallDemo.html#useful-links"
+  },"6": {
+    "doc": "What the Demo does",
+    "title": "What the Demo does",
+    "content": ". (Place info on demo views here.) . ",
+    "url": "http://localhost:4000/WhatDemoDoes.html",
+    "relUrl": "/WhatDemoDoes.html"
+  },"7": {
+    "doc": "What the Demo does",
+    "title": "Useful links",
+    "content": "Home . Install the Demo . Data Generator . ",
+    "url": "http://localhost:4000/WhatDemoDoes.html#useful-links",
+    "relUrl": "/WhatDemoDoes.html#useful-links"
+  },"8": {
+    "doc": "What is GenevaERS? (in less than 140 words)",
+    "title": "What is GenevaERS?  (in less than 140 words)",
+    "content": ". GenevaERS fixes log jams in your computer processing. For example, a customer program took 25 hours to run. GenevaERS did it in less than one hour - on the same data on the same computer producing the same results. How is that possible? . Reads from disk are 1000 times slower than calculations. Too many reads waste time. Example: a product file has 1,000 records and a sales file has a million records. A report program reads the product file for each sales transaction. That means the report reads the product file a million times. GenevaERS reads the product file just 1,000 times. GenevaERS is fast because it saves 999,000 reads. You could fix this by rewriting your programs. GenevaERS is free and does the programming for you. A paid version is even faster using special features. ",
+    "url": "http://localhost:4000/WhatIsGenevaERS.html#what-is-genevaers--in-less-than-140-words",
+    "relUrl": "/WhatIsGenevaERS.html#what-is-genevaers--in-less-than-140-words"
+  },"9": {
+    "doc": "What is GenevaERS? (in less than 140 words)",
+    "title": "Useful links",
+    "content": "Home . Install the Demo . ",
+    "url": "http://localhost:4000/WhatIsGenevaERS.html#useful-links",
+    "relUrl": "/WhatIsGenevaERS.html#useful-links"
+  },"10": {
+    "doc": "What is GenevaERS? (in less than 140 words)",
+    "title": "What is GenevaERS? (in less than 140 words)",
+    "content": " ",
+    "url": "http://localhost:4000/WhatIsGenevaERS.html",
+    "relUrl": "/WhatIsGenevaERS.html"
+  },"11": {
+    "doc": "About",
+    "title": "About",
+    "content": "This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at jekyllrb.com . You can find the source code for Minima at GitHub: jekyll / minima . You can find the source code for Jekyll at GitHub: jekyll / jekyll . ",
+    "url": "http://localhost:4000/about/",
+    "relUrl": "/about/"
+  },"12": {
+    "doc": "GenevaERS Demo - documentation home",
+    "title": "GenevaERS Demo - documentation home",
+    "content": "# GenevaERS Demo - documentation home ## Introduction [What is GenevaERS?](/WhatIsGenevaERS.html) ## Demo topics [Install the Demo](/InstallDemo.html) [What the Demo does](/WhatDemoDoes.html) [Data Generator](/DataGenerator.html) ",
+    "url": "http://localhost:4000/",
+    "relUrl": "/"
+  }
+}
