@@ -1,3 +1,6 @@
+---
+layout: home
+---
 
 # GenevaERS Demo - documentation home
 
