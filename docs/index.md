@@ -4,7 +4,7 @@ title: Home
 nav_order: 1
 ---
 
-![logo](images/genevaers-icon.svg)
+<img src="images/genevaers-icon.svg" alt="logo" style="width:100px;"/>
 
 # Home
 
