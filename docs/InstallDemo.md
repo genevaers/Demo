@@ -1,4 +1,5 @@
 ---
+layout: Install
 ---
 
 # Install GenevaERS Demo
