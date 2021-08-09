@@ -1,5 +1,7 @@
 ---
-What Demo does
+layout: page
+title: What the Demo does
+nav_order: 5
 ---
 # What the Demo does
 

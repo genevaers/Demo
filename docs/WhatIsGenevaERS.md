@@ -1,5 +1,7 @@
 ---
-Layout: GenevaERS
+layout: page
+title: What is GenevaERS?
+nav_order: 90
 ---
 # What is GenevaERS?  
 ## (in less than 140 words)

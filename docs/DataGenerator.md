@@ -1,5 +1,7 @@
 ---
-Layout: DataGenerator
+layout: page
+title: DataGenerator
+nav_order: 7
 ---
 
 # Data Generator
