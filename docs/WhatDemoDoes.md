@@ -11,9 +11,7 @@ nav_order: 5
 
 -----
 
-## Useful links
-
-[Home](index.md)
+## Next Topics
 
 [Install the Demo](InstallDemo.md)
 
