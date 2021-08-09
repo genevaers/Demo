@@ -1,92 +1,110 @@
 {"0": {
-    "doc": "Data Generator",
+    "doc": "DataGenerator",
     "title": "Data Generator",
     "content": ". ",
-    "url": "http://localhost:4000/demo/DataGenerator.html",
-    "relUrl": "/DataGenerator.html"
+    "url": "http://localhost:4000/demo/DataGenerator.html#data-generator",
+    "relUrl": "/DataGenerator.html#data-generator"
   },"1": {
-    "doc": "Data Generator",
+    "doc": "DataGenerator",
     "title": "Introduction",
     "content": "The Data Generator program is called GVBDTGEN. Use this program to generate large amounts of data to test GenevaERS. ",
     "url": "http://localhost:4000/demo/DataGenerator.html#introduction",
     "relUrl": "/DataGenerator.html#introduction"
   },"2": {
-    "doc": "Data Generator",
+    "doc": "DataGenerator",
     "title": "How to use the Data Generator",
     "content": "(Place instructions on Data Generator here.) . ",
     "url": "http://localhost:4000/demo/DataGenerator.html#how-to-use-the-data-generator",
     "relUrl": "/DataGenerator.html#how-to-use-the-data-generator"
   },"3": {
-    "doc": "Data Generator",
+    "doc": "DataGenerator",
     "title": "Useful links",
     "content": "Home . Install the Demo . What the Demo does . ",
     "url": "http://localhost:4000/demo/DataGenerator.html#useful-links",
     "relUrl": "/DataGenerator.html#useful-links"
   },"4": {
-    "doc": "Install GenevaERS Demo",
+    "doc": "DataGenerator",
+    "title": "DataGenerator",
+    "content": " ",
+    "url": "http://localhost:4000/demo/DataGenerator.html",
+    "relUrl": "/DataGenerator.html"
+  },"5": {
+    "doc": "Install",
     "title": "Install GenevaERS Demo",
     "content": ". (Place instructions to install demo here.) . ",
-    "url": "http://localhost:4000/demo/InstallDemo.html",
-    "relUrl": "/InstallDemo.html"
-  },"5": {
-    "doc": "Install GenevaERS Demo",
+    "url": "http://localhost:4000/demo/InstallDemo.html#install-genevaers-demo",
+    "relUrl": "/InstallDemo.html#install-genevaers-demo"
+  },"6": {
+    "doc": "Install",
     "title": "Useful links",
     "content": "Home . What the Demo does . Data Generator . ",
     "url": "http://localhost:4000/demo/InstallDemo.html#useful-links",
     "relUrl": "/InstallDemo.html#useful-links"
-  },"6": {
+  },"7": {
+    "doc": "Install",
+    "title": "Install",
+    "content": " ",
+    "url": "http://localhost:4000/demo/InstallDemo.html",
+    "relUrl": "/InstallDemo.html"
+  },"8": {
     "doc": "What the Demo does",
     "title": "What the Demo does",
     "content": ". (Place info on demo views here.) . ",
     "url": "http://localhost:4000/demo/WhatDemoDoes.html",
     "relUrl": "/WhatDemoDoes.html"
-  },"7": {
+  },"9": {
     "doc": "What the Demo does",
     "title": "Useful links",
     "content": "Home . Install the Demo . Data Generator . ",
     "url": "http://localhost:4000/demo/WhatDemoDoes.html#useful-links",
     "relUrl": "/WhatDemoDoes.html#useful-links"
-  },"8": {
-    "doc": "What is GenevaERS? (in less than 140 words)",
-    "title": "What is GenevaERS?  (in less than 140 words)",
-    "content": ". GenevaERS fixes log jams in your computer processing. For example, a customer program took 25 hours to run. GenevaERS did it in less than one hour - on the same data on the same computer producing the same results. How is that possible? . Reads from disk are 1000 times slower than calculations. Too many reads waste time. Example: a product file has 1,000 records and a sales file has a million records. A report program reads the product file for each sales transaction. That means the report reads the product file a million times. GenevaERS reads the product file just 1,000 times. GenevaERS is fast because it saves 999,000 reads. You could fix this by rewriting your programs. GenevaERS is free and does the programming for you. A paid version is even faster using special features. ",
-    "url": "http://localhost:4000/demo/WhatIsGenevaERS.html#what-is-genevaers--in-less-than-140-words",
-    "relUrl": "/WhatIsGenevaERS.html#what-is-genevaers--in-less-than-140-words"
-  },"9": {
-    "doc": "What is GenevaERS? (in less than 140 words)",
-    "title": "Useful links",
-    "content": "Home . Install the Demo . ",
-    "url": "http://localhost:4000/demo/WhatIsGenevaERS.html#useful-links",
-    "relUrl": "/WhatIsGenevaERS.html#useful-links"
   },"10": {
-    "doc": "What is GenevaERS? (in less than 140 words)",
-    "title": "What is GenevaERS? (in less than 140 words)",
+    "doc": "What is GenevaERS?",
+    "title": "What is GenevaERS?",
     "content": " ",
     "url": "http://localhost:4000/demo/WhatIsGenevaERS.html",
     "relUrl": "/WhatIsGenevaERS.html"
   },"11": {
+    "doc": "What is GenevaERS?",
+    "title": "(in less than 140 words)",
+    "content": ". GenevaERS fixes log jams in your computer processing. For example, a customer program took 25 hours to run. GenevaERS did it in less than one hour - on the same data on the same computer producing the same results. How is that possible? . Reads from disk are 1000 times slower than calculations. Too many reads waste time. Example: a product file has 1,000 records and a sales file has a million records. A report program reads the product file for each sales transaction. That means the report reads the product file a million times. GenevaERS reads the product file just 1,000 times. GenevaERS is fast because it saves 999,000 reads. You could fix this by rewriting your programs. GenevaERS is free and does the programming for you. A paid version is even faster using special features. ",
+    "url": "http://localhost:4000/demo/WhatIsGenevaERS.html#in-less-than-140-words",
+    "relUrl": "/WhatIsGenevaERS.html#in-less-than-140-words"
+  },"12": {
+    "doc": "What is GenevaERS?",
+    "title": "Useful links",
+    "content": "Home . Install the Demo . ",
+    "url": "http://localhost:4000/demo/WhatIsGenevaERS.html#useful-links",
+    "relUrl": "/WhatIsGenevaERS.html#useful-links"
+  },"13": {
     "doc": "About",
     "title": "About",
-    "content": "This is a website about the demo for GenvaERS. This is a draft version that is being updated. ",
+    "content": "This is a website about the demo for GenevaERS. This is a draft version that is being updated. ",
     "url": "http://localhost:4000/demo/about/",
     "relUrl": "/about/"
-  },"12": {
-    "doc": "Home",
+  },"14": {
+    "doc": "home",
     "title": "Home",
     "content": " ",
-    "url": "http://localhost:4000/demo/",
-    "relUrl": "/"
-  },"13": {
-    "doc": "Home",
+    "url": "http://localhost:4000/demo/#home",
+    "relUrl": "/#home"
+  },"15": {
+    "doc": "home",
     "title": "Introduction",
     "content": "What is GenevaERS? . ",
     "url": "http://localhost:4000/demo/#introduction",
     "relUrl": "/#introduction"
-  },"14": {
-    "doc": "Home",
+  },"16": {
+    "doc": "home",
     "title": "Demo topics",
     "content": "Install the Demo . What the Demo does . Data Generator . ",
     "url": "http://localhost:4000/demo/#demo-topics",
     "relUrl": "/#demo-topics"
+  },"17": {
+    "doc": "home",
+    "title": "home",
+    "content": " ",
+    "url": "http://localhost:4000/demo/",
+    "relUrl": "/"
   }
 }

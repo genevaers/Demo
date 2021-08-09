@@ -1,5 +1,7 @@
 ---
-layout: Install
+layout: page
+title: Install
+nav_order: 3
 ---
 
 # Install GenevaERS Demo
