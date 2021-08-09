@@ -4,12 +4,9 @@ title: Home
 nav_order: 1
 ---
 
+![logo](images/genevaers-icon.svg)
+
 # Home
-
-## Introduction
-
-[What is GenevaERS?](WhatIsGenevaERS.md)
-
 
 ## Demo topics
 
@@ -19,4 +16,9 @@ nav_order: 1
 
  [Data Generator](DataGenerator.md)
  
+
+## Background info
+
+[What is GenevaERS?](WhatIsGenevaERS.md)
+
 

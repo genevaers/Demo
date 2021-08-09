@@ -12,9 +12,7 @@ nav_order: 3
 
 -----
 
-## Useful links
-
-[Home](index.md)
+## Next Topics
 
 [What the Demo does](WhatDemoDoes.md)
 
