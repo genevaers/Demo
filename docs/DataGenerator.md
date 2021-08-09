@@ -1,4 +1,5 @@
 ---
+Layout: DataGenerator
 ---
 
 # Data Generator
