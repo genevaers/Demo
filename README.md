@@ -47,13 +47,13 @@ The installation process for the GenevaERS Performance Engine will create severa
 5. Navigate to the GenevaERS Performance Engine Demo page (if you're not there already): https://github.com/genevaers/demo
 6. Press the green "Latest" button in the Releases section at the right of this page.   
 7. Select each of these files on the Latest Release page and download them to your local drive.  
-    1.  GVBDEMO.JCL.XMI
-    2.  GVBDEMO.GVBLOAD.XMI
-    3.  GVBDEMO.WB.XML.XMI
+     - GVBDEMO.JCL.XMI
+     - GVBDEMO.GVBLOAD.XMI
+     - GVBDEMO.WB.XML.XMI
 8.  Using your preferred file transfer technique, upload the following files in binary mode from your local drive to your mainframe, overwriting the transfer data sets that have just been allocated:
-    1.  GVBDEMO.JCL.XMI
-    2.  GVBDEMO.GVBLOAD.XMI
-    3.  GVBDEMO.WB.XML.XMI
+     - GVBDEMO.JCL.XMI
+     - GVBDEMO.GVBLOAD.XMI
+     - GVBDEMO.WB.XML.XMI
 9.  Copy the following JCL and paste it into a JCL library member in your mainframe session:
 ```
 //RCVDEMO  JOB (ACCT),CLASS=A,MSGCLASS=X,MSGLEVEL=(1,1),NOTIFY=&SYSUID.
@@ -88,7 +88,12 @@ The installation process for the GenevaERS Performance Engine will create severa
 15. Update the JCL in \<your-tso-prefix\>.GVBDEMO.JCL(GENDATA) according to the comments there and submit the job to generate the demo data.
 16. Update the JCL in \<your-tso-prefix\>.GVBDEMO.JCL(RUNPASS1) according to the comments there and submit the job to execute the GenevaERS Demo Pass 1.  
 17. Review the following control reports in your job output: 
-    1.  MR91RPT
-    2.  REFRRPT
-    3.  EXTRRPT 
-    4.  MR88RPT
+     - MR91RPT
+     - REFRRPT
+     - EXTRRPT 
+     - MR88RPT
+18. Review the following data sets that were output from this run: 
+     - GVBDEMO.PASS1.DAGSTATO
+     - GVBDEMO.PASS1.DCOBYSTO
+     - GVBDEMO.PASS1.DCUSTORO
+     - GVBDEMO.PASS1.DEXLKUP0
