@@ -94,7 +94,7 @@ The installation process for the GenevaERS Performance Engine will create severa
      - EXTRRPT - This report is from program GVBMR95E (the Extract Phase), which reads one or more source data files, performs table lookups and transformations, and writes one or more output files.  
      - MR88RPT - This report is from program GVBMR88 (the Format Phase), which sorts, summarizes, and formats the data if necessary.  
 18. Review the following data sets that were output from this run: 
-     - GVBDEMO.PASS1.DAGSTATO
-     - GVBDEMO.PASS1.DCOBYSTO
-     - GVBDEMO.PASS1.DCUSTORO
-     - GVBDEMO.PASS1.DEXLKUP0
+     - <your-tso-prefix>.GVBDEMO.PASS1.DAGSTATO
+     - <your-tso-prefix>.GVBDEMO.PASS1.DCOBYSTO
+     - <your-tso-prefix>.GVBDEMO.PASS1.DCUSTORO
+     - <your-tso-prefix>.GVBDEMO.PASS1.DEXLKUP0
