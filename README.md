@@ -41,11 +41,12 @@ The installation process for the GenevaERS Performance Engine will create severa
 //            DCB=(DSORG=PS,RECFM=FB,LRECL=80,BLKSIZE=3120)
 ```
 2. Update the JOB statement above to conform to your installation's standards.
-3. Set the value of HLQ above to your TSO Prefix. For example:
+3. Set the value of HLQ above to your TSO Prefix. For example:  
         SET HLQ=APERSON
 4. Submit the job to pre-allocate the transfer data sets.
-5. Navigate to the GenevaERS Performance Engine Demo page (if you're not there already): https://github.com/genevaers/demo
-6. Press the green "Latest" button in the Releases section at the right of this page.   
+5. In a new tab on your browser, navigate to the GenevaERS Performance Engine Demo page:  
+        https://github.com/genevaers/demo
+6. In the new tab from the previous step, find "Releases" on the right which is under the "About" section.  Click on the green "Latest" button.
 7. Select each of these files on the Latest Release page and download them to your local drive.  
      - GVBDEMO.JCL.XMI
      - GVBDEMO.GVBLOAD.XMI
@@ -82,16 +83,16 @@ The installation process for the GenevaERS Performance Engine will create severa
              DSN(&HLQ..GVBDEMO.JCL)         RELEASE                    
 ```
 12. Update the JOB statement above to conform to your installation's standards
-13. Set the value of HLQ above to your TSO Prefix. For example:
+13. Set the value of HLQ above to your TSO Prefix. For example:  
         SET HLQ=APERSON 
 14. Submit the job to expand the transfer data sets into the installation data sets.  
 15. Update the JCL in \<your-tso-prefix\>.GVBDEMO.JCL(GENDATA) according to the comments there and submit the job to generate the demo data.
 16. Update the JCL in \<your-tso-prefix\>.GVBDEMO.JCL(RUNPASS1) according to the comments there and submit the job to execute the GenevaERS Demo Pass 1.  
 17. Review the following control reports in your job output: 
-     - MR91RPT
-     - REFRRPT
-     - EXTRRPT 
-     - MR88RPT
+     - MR91RPT - This report is from program GVBMR91 (the Logic Phase), which specifies the work to be done in the current run.  It also optimizes the work to allow the upcoming Extract Phase to perform multiple operations in a single pass of the source data.  For more about what the demo does, see https://github.com/genevaers/demo/blob/main/docs/WhatDemoDoes.md
+     - REFRRPT - This report is from program GVBMR95R (the Reference Phase), which pre-processes reference data to conserve memory in the Extract Phase
+     - EXTRRPT - This report is from program GVBMR95E (the Extract Phase), which reads one or more source data files, performs table lookups and transformations, and writes one or more output files.  
+     - MR88RPT - This report is from program GVBMR88 (the Format Phase), which sorts, summarizes, and formats the data if necessary.  
 18. Review the following data sets that were output from this run: 
      - GVBDEMO.PASS1.DAGSTATO
      - GVBDEMO.PASS1.DCOBYSTO
