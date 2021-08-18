@@ -35,3 +35,5 @@ A paid version is even faster using special features.
 ## Next Topic
 
 [Install the Demo](InstallDemo.md)
+
+[Videos about GenevaERS](VideosGenevaERS.md)
