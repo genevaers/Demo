@@ -3,4 +3,15 @@ _site
 .jekyll-cache
 .jekyll-metadata
 vendor
-*.html
+404.html
+DataGenerator.html
+feed.xml
+index.html
+InstallDemo.html
+WhatDemoDoes.html
+WhatisGenevaERS.html
+just-the-docs-dark.css
+just-the-docs-default.css
+just-the-docs-light.css
+search-data.json
+welcome-to-jekyll.html
