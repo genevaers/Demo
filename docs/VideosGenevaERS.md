@@ -7,6 +7,8 @@ nav_order: 91
 
 GenevaERS: [60 second intro](https://youtu.be/588SK8zVa30)
 
-More videos being prepared.
+
+More videos are being prepared.
+
 
 The Genevaers site: [GenevaERS.org](https://genevaers.org)
