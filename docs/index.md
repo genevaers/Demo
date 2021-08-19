@@ -20,3 +20,5 @@ nav_order: 1
 [What is GenevaERS?](WhatIsGenevaERS.md)
 
 [Videos about GenevaERS](VideosGenevaERS.md)
+
+[GenevaERS Charter PDF](GenevaERSCharter.md)
