@@ -4,7 +4,7 @@ title: Install
 nav_order: 3
 ---
 
-# How To Install the GenevaERS Performance Engine Demo
+# Install the GenevaERS Demo
 
 Prerequisites:
 - IBM z13 mainframe or later

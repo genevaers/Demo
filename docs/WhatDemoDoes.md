@@ -3,21 +3,26 @@ layout: page
 title: What the Demo does
 nav_order: 5
 ---
-# What the GenevaERS Performance Engine Demo does
+# What the Demo does
 
------
-## Demo Overview
+## Processing
 
-A business might have several large files listing order items, and reference files containing information on orders, products, stores and customers.
+This demo contains dummy data about an example business.
 
-Typical reports that might be created from this data are, for example:
+The business has several large order item files, and separate reference files for orders, products, stores and customers.
+
+This demo creates reports for:
 
 - All orders including customer and product details.
 - A summary of all orders by customer.
 - A summary of all orders by customer, and by store location.
 - A summary of products sold, by store location.
 
-This demo will generate data of this structure, then using the GenevaERS Performance Engine, generate multiple reports, while only reading the data once.
+This demo creates the above reports by reading all the data only once (rather than each report re-reading a lot of the data).  This is why GenevaERS is called the "Single Pass Optimization Engine" - all input data is read only once.
+
+The reports are predefined for this demo.  For you to run your own processing, you will need to download more parts of GenevaERS and learn how to configure the processing.
+
+
 
 -----
 
