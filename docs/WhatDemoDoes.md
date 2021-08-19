@@ -20,7 +20,7 @@ This demo creates reports for:
 
 This demo creates the above reports by reading all the data only once (rather than each report re-reading a lot of the data).  This is why GenevaERS is called the "Single Pass Optimization Engine" - all input data is read only once.
 
-The reports are predefined for this demo.  For you to run your own processing, you will need to download more parts of GenevaERS and learn how to configure the processing.
+The reports are predefined for this demo.  For you to run your own processing, you will need to download the part of GenevaERS called the "Workbench".  When you learn the Workbench you can configure your own processing.
 
 
 
