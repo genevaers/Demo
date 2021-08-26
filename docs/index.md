@@ -13,6 +13,9 @@ nav_order: 1
  [What the Demo does](WhatDemoDoes.md)
 
  [Data Generator](DataGenerator.md)
+
+ [After the demo](AfterDemo.md).
+
  
 
 ## Background info

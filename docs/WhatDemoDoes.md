@@ -22,6 +22,8 @@ This demo creates the above reports by reading all the data only once (rather th
 
 The reports are predefined for this demo.  If you follow the instructions in "Install the Demo" you will get the reports.
 
+When you have run the demo and want to try your own processing in GenevaERS, see topic [After the demo](AfterDemo.md).
+
 -----
 
 ## Next Topics
@@ -29,3 +31,5 @@ The reports are predefined for this demo.  If you follow the instructions in "In
 [Install the Demo](InstallDemo.md)
 
 [Data Generator](DataGenerator.md)
+
+[After the demo](AfterDemo.md)
