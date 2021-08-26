@@ -30,6 +30,4 @@ When you have run the demo and want to try your own processing in GenevaERS, see
 
 [Install the Demo](InstallDemo.md)
 
-[Data Generator](DataGenerator.md)
-
 [After the demo](AfterDemo.md)
