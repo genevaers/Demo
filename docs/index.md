@@ -1,6 +1,6 @@
 ---
 layout: home
-title: Home
+title: Home (Demo doco)
 nav_order: 1
 ---
 
