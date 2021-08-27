@@ -112,3 +112,5 @@ The installation process for the GenevaERS Performance Engine will create severa
 [What the Demo does](WhatDemoDoes.md)
 
 [Data Generator](DataGenerator.md)
+
+[Link to Demo repo in GitHub](https://github.com/genevaers/demo)
