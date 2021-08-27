@@ -16,7 +16,6 @@ nav_order: 1
 
  [Link to Demo repo in GitHub](https://github.com/genevaers/demo)
  
-
 ## Background info
 
 [What is GenevaERS?](WhatIsGenevaERS.md)
