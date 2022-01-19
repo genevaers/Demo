@@ -8,10 +8,11 @@ nav_order: 99
 
 # About this website
 
-This is a website about the demo for GenevaERS.
+This website:
 
+- covers the demo for GenevaERS
 
-This is a draft version that is being updated.
+- is a work-in-progress
 
-This site uses GitHub Flavoured Markdown.
+- uses GitHub Flavoured Markdown.
 
