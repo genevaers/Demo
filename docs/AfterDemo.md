@@ -3,9 +3,9 @@ layout: page
 title: After the Demo
 nav_order: 89
 ---
-# After your have run the Demo
+# After you have run the Demo
 
-## Do you own processing in GenevaERS
+## Do your own processing in GenevaERS
 
 When you have run the Demo and seen what GenevaERS can do, the next step is configure your own processing.
 
