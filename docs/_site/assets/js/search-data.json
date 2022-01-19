@@ -1,45 +1,45 @@
 {"0": {
-    "doc": "DataGenerator",
-    "title": "Data Generator",
-    "content": ". ",
-    "url": "http://localhost:4000/demo/DataGenerator.html#data-generator",
-    "relUrl": "/DataGenerator.html#data-generator"
-  },"1": {
-    "doc": "DataGenerator",
-    "title": "Introduction",
-    "content": "The Data Generator program is called GVBDTGEN. Use this program to generate large amounts of data to test GenevaERS. ",
-    "url": "http://localhost:4000/demo/DataGenerator.html#introduction",
-    "relUrl": "/DataGenerator.html#introduction"
-  },"2": {
-    "doc": "DataGenerator",
-    "title": "How to use the Data Generator",
-    "content": "(Place instructions on Data Generator here.) . ",
-    "url": "http://localhost:4000/demo/DataGenerator.html#how-to-use-the-data-generator",
-    "relUrl": "/DataGenerator.html#how-to-use-the-data-generator"
-  },"3": {
-    "doc": "DataGenerator",
-    "title": "Useful links",
-    "content": "Home . Install the Demo . What the Demo does . ",
-    "url": "http://localhost:4000/demo/DataGenerator.html#useful-links",
-    "relUrl": "/DataGenerator.html#useful-links"
-  },"4": {
-    "doc": "DataGenerator",
-    "title": "DataGenerator",
+    "doc": "After the Demo",
+    "title": "After you have run the Demo",
     "content": " ",
-    "url": "http://localhost:4000/demo/DataGenerator.html",
-    "relUrl": "/DataGenerator.html"
+    "url": "http://localhost:4000/demo/AfterDemo.html#after-you-have-run-the-demo",
+    "relUrl": "/AfterDemo.html#after-you-have-run-the-demo"
+  },"1": {
+    "doc": "After the Demo",
+    "title": "Do your own processing in GenevaERS",
+    "content": "When you have run the Demo and seen what GenevaERS can do, the next step is configure your own processing. The way to do that is in a part of GenevaERS called the Workbench. You will be able to see how the Demo was configured, and then configure your own processing. To download and run the Workbench, see GenevaERS workbench doc. ",
+    "url": "http://localhost:4000/demo/AfterDemo.html#do-your-own-processing-in-genevaers",
+    "relUrl": "/AfterDemo.html#do-your-own-processing-in-genevaers"
+  },"2": {
+    "doc": "After the Demo",
+    "title": "After the Demo",
+    "content": " ",
+    "url": "http://localhost:4000/demo/AfterDemo.html",
+    "relUrl": "/AfterDemo.html"
+  },"3": {
+    "doc": "Charter",
+    "title": "GenevaERS Charter PDF",
+    "content": "Link . ",
+    "url": "http://localhost:4000/demo/GenevaERSCharter.html#genevaers-charter-pdf",
+    "relUrl": "/GenevaERSCharter.html#genevaers-charter-pdf"
+  },"4": {
+    "doc": "Charter",
+    "title": "Charter",
+    "content": " ",
+    "url": "http://localhost:4000/demo/GenevaERSCharter.html",
+    "relUrl": "/GenevaERSCharter.html"
   },"5": {
     "doc": "Install",
-    "title": "Install GenevaERS Demo",
-    "content": ". (Place instructions to install demo here.) . ",
-    "url": "http://localhost:4000/demo/InstallDemo.html#install-genevaers-demo",
-    "relUrl": "/InstallDemo.html#install-genevaers-demo"
+    "title": "Install the GenevaERS Demo",
+    "content": "Prerequisites: . | IBM z13 mainframe or later | IBM z/OS V2R3 or later | IBM DFSORT or compatible sort utility | . The installation process for the GenevaERS Performance Engine will create several mainframe data sets whose names begin with your TSO Prefix. (This is the same as your TSO ID, unless you have changed it to something else by using the TSO PROFILE PREFIX command.) Using the TSO Prefix as the high-level qualifier of the installation data sets allows us to avoid enclosing data set names with single-quote marks in any TSO commands mentioned below or in file transfer processes. | Copy the following JCL and paste it into a JCL library member in your mainframe session: | . //ALCDEMO JOB (ACCT),CLASS=A,MSGCLASS=X,MSGLEVEL=(1,1),NOTIFY=&amp;SYSUID. //* // EXPORT SYMLIST=* // SET HLQ=&lt;your-tso-prefix&gt; //* //DELFILES EXEC PGM=IDCAMS //SYSPRINT DD SYSOUT=* //SYSIN DD *,SYMBOLS=EXECSYS DELETE &amp;HLQ..GVBDEMO.GVBLOAD.XMI PURGE DELETE &amp;HLQ..GVBDEMO.WB.XML.XMI PURGE DELETE &amp;HLQ..GVBDEMO.JCL.XMI PURGE IF MAXCC LE 8 THEN /* IF OPERATION FAILED, */ - SET MAXCC = 0 /* PROCEED AS NORMAL ANYWAY */ //* //ALLOCATE EXEC PGM=IEFBR14 //GVBLOAD DD DSN=&amp;HLQ..GVBDEMO.GVBLOAD.XMI, // DISP=(NEW,CATLG,DELETE), // UNIT=SYSDA, // SPACE=(TRK,(3000,300)), // DCB=(DSORG=PS,RECFM=FB,LRECL=80,BLKSIZE=3120) //WBXML DD DSN=&amp;HLQ..GVBDEMO.WB.XML.XMI, // DISP=(NEW,CATLG,DELETE), // UNIT=SYSDA, // SPACE=(TRK,(10,10)), // DCB=(DSORG=PS,RECFM=FB,LRECL=80,BLKSIZE=3120) //JCL DD DSN=&amp;HLQ..GVBDEMO.JCL.XMI, // DISP=(NEW,CATLG,DELETE), // UNIT=SYSDA, // SPACE=(TRK,(10,10)), // DCB=(DSORG=PS,RECFM=FB,LRECL=80,BLKSIZE=3120) . | Update the JOB statement above to conform to your installation's standards. | Set the value of HLQ above to your TSO Prefix. For example: SET HLQ=APERSON | Submit the job to pre-allocate the transfer data sets. | In a new tab on your browser, navigate to the GenevaERS Performance Engine Demo page: https://github.com/genevaers/demo | In the new tab from the previous step, find &quot;Releases&quot; on the right which is under the &quot;About&quot; section. Click on the green &quot;Latest&quot; button. | Select each of these files on the Latest Release page and download them to your local drive. | GVBDEMO.JCL.XMI | GVBDEMO.GVBLOAD.XMI | GVBDEMO.WB.XML.XMI | . | Using your preferred file transfer technique, upload the following files in binary mode from your local drive to your mainframe, overwriting the transfer data sets that have just been allocated: . | GVBDEMO.JCL.XMI | GVBDEMO.GVBLOAD.XMI | GVBDEMO.WB.XML.XMI | . | Copy the following JCL and paste it into a JCL library member in your mainframe session: | . //RCVDEMO JOB (ACCT),CLASS=A,MSGCLASS=X,MSGLEVEL=(1,1),NOTIFY=&amp;SYSUID. //* // EXPORT SYMLIST=* // SET HLQ=&lt;your-tso-prefix&gt; //* //DELFILES EXEC PGM=IDCAMS //SYSPRINT DD SYSOUT=* //SYSIN DD *,SYMBOLS=EXECSYS DELETE &amp;HLQ..GVBDEMO.GVBLOAD PURGE DELETE &amp;HLQ..GVBDEMO.WB.XML PURGE DELETE &amp;HLQ..GVBDEMO.JCL PURGE IF MAXCC LE 8 THEN /* IF OPERATION FAILED, */ - SET MAXCC = 0 /* PROCEED AS NORMAL ANYWAY */ //* //RECEIVE EXEC PGM=IKJEFT01,DYNAMNBR=30 //SYSTSPRT DD SYSOUT=* //SYSTSIN DD *,SYMBOLS=EXECSYS PROFILE NOPREFIX RECEIVE INDSN(&amp;HLQ..GVBDEMO.GVBLOAD.XMI) DSN(&amp;HLQ..GVBDEMO.GVBLOAD) RELEASE RECEIVE INDSN(&amp;HLQ..GVBDEMO.WB.XML.XMI) DSN(&amp;HLQ..GVBDEMO.WB.XML) RELEASE RECEIVE INDSN(&amp;HLQ..GVBDEMO.JCL.XMI) DSN(&amp;HLQ..GVBDEMO.JCL) RELEASE . | Update the JOB statement above to conform to your installation's standards | Set the value of HLQ above to your TSO Prefix. For example: SET HLQ=APERSON | Submit the job to expand the transfer data sets into the installation data sets. | Update the JCL in &lt;your-tso-prefix&gt;.GVBDEMO.JCL(GENDATA) according to the comments there and submit the job to generate the demo data. | Update the JCL in &lt;your-tso-prefix&gt;.GVBDEMO.JCL(RUNPASS1) according to the comments there and submit the job to execute the GenevaERS Demo Pass 1. | Review the following control reports in your job output: . | MR91RPT - This report is from program GVBMR91 (the Logic Phase), which specifies the work to be done in the current run. It also optimizes the work to allow the upcoming Extract Phase to perform multiple operations in a single pass of the source data. For more about what the demo does, see https://github.com/genevaers/demo/blob/main/docs/WhatDemoDoes.md | REFRRPT - This report is from program GVBMR95R (the Reference Phase), which pre-processes reference data to conserve memory in the Extract Phase | EXTRRPT - This report is from program GVBMR95E (the Extract Phase), which reads one or more source data files, performs table lookups and transformations, and writes one or more output files. | MR88RPT - This report is from program GVBMR88 (the Format Phase), which sorts, summarizes, and formats the data if necessary. | . | Review the following data sets that were output from this run: . | &lt;your-tso-prefix&gt;.GVBDEMO.PASS1.DAGSTATO | &lt;your-tso-prefix&gt;.GVBDEMO.PASS1.DCOBYSTO | &lt;your-tso-prefix&gt;.GVBDEMO.PASS1.DCUSTORO | &lt;your-tso-prefix&gt;.GVBDEMO.PASS1.DEXLKUP0 | . | . ",
+    "url": "http://localhost:4000/demo/InstallDemo.html#install-the-genevaers-demo",
+    "relUrl": "/InstallDemo.html#install-the-genevaers-demo"
   },"6": {
     "doc": "Install",
-    "title": "Useful links",
-    "content": "Home . What the Demo does . Data Generator . ",
-    "url": "http://localhost:4000/demo/InstallDemo.html#useful-links",
-    "relUrl": "/InstallDemo.html#useful-links"
+    "title": "Next Topics",
+    "content": "What the Demo does . Link to Demo repo in GitHub . ",
+    "url": "http://localhost:4000/demo/InstallDemo.html#next-topics",
+    "relUrl": "/InstallDemo.html#next-topics"
   },"7": {
     "doc": "Install",
     "title": "Install",
@@ -47,62 +47,86 @@
     "url": "http://localhost:4000/demo/InstallDemo.html",
     "relUrl": "/InstallDemo.html"
   },"8": {
+    "doc": "Videos",
+    "title": "Videos",
+    "content": "GenevaERS 60 second intro . More videos are being prepared. ",
+    "url": "http://localhost:4000/demo/VideosGenevaERS.html",
+    "relUrl": "/VideosGenevaERS.html"
+  },"9": {
+    "doc": "Videos",
+    "title": "Website",
+    "content": "GenevaERS.org . ",
+    "url": "http://localhost:4000/demo/VideosGenevaERS.html#website",
+    "relUrl": "/VideosGenevaERS.html#website"
+  },"10": {
     "doc": "What the Demo does",
     "title": "What the Demo does",
-    "content": ". (Place info on demo views here.) . ",
+    "content": " ",
     "url": "http://localhost:4000/demo/WhatDemoDoes.html",
     "relUrl": "/WhatDemoDoes.html"
-  },"9": {
+  },"11": {
     "doc": "What the Demo does",
-    "title": "Useful links",
-    "content": "Home . Install the Demo . Data Generator . ",
-    "url": "http://localhost:4000/demo/WhatDemoDoes.html#useful-links",
-    "relUrl": "/WhatDemoDoes.html#useful-links"
-  },"10": {
+    "title": "Processing",
+    "content": "This demo contains dummy data about an example business. The business has several large order item files, and separate reference files for orders, products, stores and customers. This demo creates reports for: . | All orders including customer and product details. | A summary of all orders by customer. | A summary of all orders by customer, and by store location. | A summary of products sold, by store location. | . This demo creates the above reports by reading all the data only once (rather than each report re-reading a lot of the data). This is why GenevaERS is called the &quot;Single-Pass Optimization Engine&quot; - all input data is read only once. The reports are predefined for this demo. If you follow the instructions in &quot;Install the Demo&quot; you will get the reports. When you have run the demo and want to try your own processing in GenevaERS, see topic After the demo. ",
+    "url": "http://localhost:4000/demo/WhatDemoDoes.html#processing",
+    "relUrl": "/WhatDemoDoes.html#processing"
+  },"12": {
+    "doc": "What the Demo does",
+    "title": "Next Topics",
+    "content": "Install the Demo . After the demo . Link to Demo repo in GitHub . ",
+    "url": "http://localhost:4000/demo/WhatDemoDoes.html#next-topics",
+    "relUrl": "/WhatDemoDoes.html#next-topics"
+  },"13": {
     "doc": "What is GenevaERS?",
     "title": "What is GenevaERS?",
     "content": " ",
     "url": "http://localhost:4000/demo/WhatIsGenevaERS.html",
     "relUrl": "/WhatIsGenevaERS.html"
-  },"11": {
+  },"14": {
     "doc": "What is GenevaERS?",
     "title": "(in less than 140 words)",
     "content": ". GenevaERS fixes log jams in your computer processing. For example, a customer program took 25 hours to run. GenevaERS did it in less than one hour - on the same data on the same computer producing the same results. How is that possible? . Reads from disk are 1000 times slower than calculations. Too many reads waste time. Example: a product file has 1,000 records and a sales file has a million records. A report program reads the product file for each sales transaction. That means the report reads the product file a million times. GenevaERS reads the product file just 1,000 times. GenevaERS is fast because it saves 999,000 reads. You could fix this by rewriting your programs. GenevaERS is free and does the programming for you. A paid version is even faster using special features. ",
     "url": "http://localhost:4000/demo/WhatIsGenevaERS.html#in-less-than-140-words",
     "relUrl": "/WhatIsGenevaERS.html#in-less-than-140-words"
-  },"12": {
+  },"15": {
     "doc": "What is GenevaERS?",
-    "title": "Useful links",
-    "content": "Home . Install the Demo . ",
-    "url": "http://localhost:4000/demo/WhatIsGenevaERS.html#useful-links",
-    "relUrl": "/WhatIsGenevaERS.html#useful-links"
-  },"13": {
+    "title": "Next Topic",
+    "content": "Install the Demo . Videos about GenevaERS . ",
+    "url": "http://localhost:4000/demo/WhatIsGenevaERS.html#next-topic",
+    "relUrl": "/WhatIsGenevaERS.html#next-topic"
+  },"16": {
+    "doc": "About",
+    "title": "About this website",
+    "content": "This is a website about the demo for GenevaERS. This is a draft version that is being updated. This site uses GitHub Flavoured Markdown. ",
+    "url": "http://localhost:4000/demo/about/#about-this-website",
+    "relUrl": "/about/#about-this-website"
+  },"17": {
     "doc": "About",
     "title": "About",
-    "content": "This is a website about the demo for GenevaERS. This is a draft version that is being updated. ",
+    "content": " ",
     "url": "http://localhost:4000/demo/about/",
     "relUrl": "/about/"
-  },"14": {
-    "doc": "home",
-    "title": "Home",
+  },"18": {
+    "doc": "Home (Demo doco)",
+    "title": "Home - GenevaERS Demo documentation",
     "content": " ",
-    "url": "http://localhost:4000/demo/#home",
-    "relUrl": "/#home"
-  },"15": {
-    "doc": "home",
-    "title": "Introduction",
-    "content": "What is GenevaERS? . ",
-    "url": "http://localhost:4000/demo/#introduction",
-    "relUrl": "/#introduction"
-  },"16": {
-    "doc": "home",
+    "url": "http://localhost:4000/demo/#home---genevaers-demo-documentation",
+    "relUrl": "/#home---genevaers-demo-documentation"
+  },"19": {
+    "doc": "Home (Demo doco)",
     "title": "Demo topics",
-    "content": "Install the Demo . What the Demo does . Data Generator . ",
+    "content": "Install the Demo . What the Demo does . After the demo . Link to Demo repo in GitHub . ",
     "url": "http://localhost:4000/demo/#demo-topics",
     "relUrl": "/#demo-topics"
-  },"17": {
-    "doc": "home",
-    "title": "home",
+  },"20": {
+    "doc": "Home (Demo doco)",
+    "title": "Background info",
+    "content": "What is GenevaERS? . Videos about GenevaERS . GenevaERS Charter PDF . ",
+    "url": "http://localhost:4000/demo/#background-info",
+    "relUrl": "/#background-info"
+  },"21": {
+    "doc": "Home (Demo doco)",
+    "title": "Home (Demo doco)",
     "content": " ",
     "url": "http://localhost:4000/demo/",
     "relUrl": "/"
