@@ -109,7 +109,7 @@ The installation process for the GenevaERS Performance Engine will create severa
 
 ## Next Topics
 
-[Demo description](WhatDemoDoes.md)
+[What the Demo does](WhatDemoDoes.md)
 
 [Link to Demo repo in GitHub](https://github.com/genevaers/demo)
 
