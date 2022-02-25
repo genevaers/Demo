@@ -88,18 +88,18 @@ The installation process for the GenevaERS Performance Engine will create severa
   RECEIVE  INDSN(&HLQ..GVBDEMO.JCL.XMI)                                
              DSN(&HLQ..GVBDEMO.JCL)         RELEASE                    
 ```
-12. Update the JOB statement above to conform to your installation's standards
-13. Set the value of HLQ above to your TSO Prefix. For example:  
+10. Update the JOB statement above to conform to your installation's standards
+11. Set the value of HLQ above to your TSO Prefix. For example:  
         SET HLQ=APERSON 
-14. Submit the job to expand the transfer data sets into the installation data sets.  
-15. Update the JCL in \<your-tso-prefix\>.GVBDEMO.JCL(GENDATA) according to the comments there and submit the job to generate the demo data.
-16. Update the JCL in \<your-tso-prefix\>.GVBDEMO.JCL(RUNPASS1) according to the comments there and submit the job to execute the GenevaERS Demo Pass 1.  
-17. Review the following control reports in your job output: 
+12. Submit the job to expand the transfer data sets into the installation data sets.  
+13. Update the JCL in \<your-tso-prefix\>.GVBDEMO.JCL(GENDATA) according to the comments there and submit the job to generate the demo data.
+14. Update the JCL in \<your-tso-prefix\>.GVBDEMO.JCL(RUNPASS1) according to the comments there and submit the job to execute the GenevaERS Demo Pass 1.  
+15. Review the following control reports in your job output: 
      - MR91RPT - This report is from program GVBMR91 (the Logic Phase), which specifies the work to be done in the current run.  It also optimizes the work to allow the upcoming Extract Phase to perform multiple operations in a single pass of the source data.  For more about what the demo does, see https://github.com/genevaers/demo/blob/main/docs/WhatDemoDoes.md
      - REFRRPT - This report is from program GVBMR95R (the Reference Phase), which pre-processes reference data to conserve memory in the Extract Phase
      - EXTRRPT - This report is from program GVBMR95E (the Extract Phase), which reads one or more source data files, performs table lookups and transformations, and writes one or more output files.  
      - MR88RPT - This report is from program GVBMR88 (the Format Phase), which sorts, summarizes, and formats the data if necessary.  
-18. Review the following data sets that were output from this run: 
+16. Review the following data sets that were output from this run: 
      - \<your-tso-prefix>\.GVBDEMO.PASS1.DAGSTATO
      - \<your-tso-prefix>\.GVBDEMO.PASS1.DCOBYSTO
      - \<your-tso-prefix>\.GVBDEMO.PASS1.DCUSTORO
