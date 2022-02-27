@@ -46,60 +46,60 @@ The installation process for the GenevaERS Performance Engine will create severa
     //            SPACE=(TRK,(10,10)),
     //            DCB=(DSORG=PS,RECFM=FB,LRECL=80,BLKSIZE=3120)
     ```
-2. Update the JOB statement above to conform to your installation's standards.
-3. Set the value of HLQ above to your TSO Prefix. For example:  
+1. Update the JOB statement above to conform to your installation's standards.
+1. Set the value of HLQ above to your TSO Prefix. For example:  
         SET HLQ=APERSON
-4. Submit the job to pre-allocate the transfer data sets.
-5. In a new tab on your browser, navigate to the GenevaERS Performance Engine Demo page:  
+1. Submit the job to pre-allocate the transfer data sets.
+1. In a new tab on your browser, navigate to the GenevaERS Performance Engine Demo page:  
         https://github.com/genevaers/demo
-6. In the new tab from the previous step, find "Releases" on the right which is under the "About" section.  Click on the green "Latest" button.
-7. Select each of these files on the Latest Release page and download them to your local drive.  
+1. In the new tab from the previous step, find "Releases" on the right which is under the "About" section.  Click on the green "Latest" button.
+1. Select each of these files on the Latest Release page and download them to your local drive.  
      - GVBDEMO.JCL.XMI
      - GVBDEMO.GVBLOAD.XMI
      - GVBDEMO.WB.XML.XMI
-8.  Using your preferred file transfer technique, upload the following files in binary mode from your local drive to your mainframe, overwriting the transfer data sets that have just been allocated:
+1.  Using your preferred file transfer technique, upload the following files in binary mode from your local drive to your mainframe, overwriting the transfer data sets that have just been allocated:
      - GVBDEMO.JCL.XMI
      - GVBDEMO.GVBLOAD.XMI
      - GVBDEMO.WB.XML.XMI
-9.  Copy the following JCL and paste it into a JCL library member in your mainframe session:
-```
-//RCVDEMO  JOB (ACCT),CLASS=A,MSGCLASS=X,MSGLEVEL=(1,1),NOTIFY=&SYSUID.
-//*                                                                    
-//         EXPORT SYMLIST=*                                            
-//         SET HLQ=<your-tso-prefix>                                             
-//*                                                                    
-//DELFILES EXEC PGM=IDCAMS                                             
-//SYSPRINT DD SYSOUT=*                                                 
-//SYSIN    DD *,SYMBOLS=EXECSYS                                        
- DELETE  &HLQ..GVBDEMO.GVBLOAD  PURGE                                  
- DELETE  &HLQ..GVBDEMO.WB.XML   PURGE                                  
- DELETE  &HLQ..GVBDEMO.JCL      PURGE                                  
- IF MAXCC LE 8 THEN         /* IF OPERATION FAILED,     */    -        
-     SET MAXCC = 0          /* PROCEED AS NORMAL ANYWAY */             
-//*                                                                    
-//RECEIVE  EXEC PGM=IKJEFT01,DYNAMNBR=30                               
-//SYSTSPRT DD SYSOUT=*                                                 
-//SYSTSIN  DD *,SYMBOLS=EXECSYS                                        
-  PROFILE NOPREFIX                                                     
-  RECEIVE  INDSN(&HLQ..GVBDEMO.GVBLOAD.XMI)                            
-             DSN(&HLQ..GVBDEMO.GVBLOAD)     RELEASE                    
-  RECEIVE  INDSN(&HLQ..GVBDEMO.WB.XML.XMI)                             
-             DSN(&HLQ..GVBDEMO.WB.XML)      RELEASE                    
-  RECEIVE  INDSN(&HLQ..GVBDEMO.JCL.XMI)                                
-             DSN(&HLQ..GVBDEMO.JCL)         RELEASE                    
-```
-10. Update the JOB statement above to conform to your installation's standards
-11. Set the value of HLQ above to your TSO Prefix. For example:  
+1.  Copy the following JCL and paste it into a JCL library member in your mainframe session:
+     ```
+     //RCVDEMO  JOB (ACCT),CLASS=A,MSGCLASS=X,MSGLEVEL=(1,1),NOTIFY=&SYSUID.
+     //*                                                                    
+     //         EXPORT SYMLIST=*                                            
+     //         SET HLQ=<your-tso-prefix>                                             
+     //*                                                                    
+     //DELFILES EXEC PGM=IDCAMS                                             
+     //SYSPRINT DD SYSOUT=*                                                 
+     //SYSIN    DD *,SYMBOLS=EXECSYS                                        
+      DELETE  &HLQ..GVBDEMO.GVBLOAD  PURGE                                  
+      DELETE  &HLQ..GVBDEMO.WB.XML   PURGE                                  
+      DELETE  &HLQ..GVBDEMO.JCL      PURGE                                  
+      IF MAXCC LE 8 THEN         /* IF OPERATION FAILED,     */    -        
+      SET MAXCC = 0          /* PROCEED AS NORMAL ANYWAY */             
+     //*                                                                    
+     //RECEIVE  EXEC PGM=IKJEFT01,DYNAMNBR=30                               
+     //SYSTSPRT DD SYSOUT=*                                                 
+     //SYSTSIN  DD *,SYMBOLS=EXECSYS                                        
+       PROFILE NOPREFIX                                                     
+       RECEIVE  INDSN(&HLQ..GVBDEMO.GVBLOAD.XMI)                            
+                  DSN(&HLQ..GVBDEMO.GVBLOAD)     RELEASE                    
+       RECEIVE  INDSN(&HLQ..GVBDEMO.WB.XML.XMI)                             
+                  DSN(&HLQ..GVBDEMO.WB.XML)      RELEASE                    
+       RECEIVE  INDSN(&HLQ..GVBDEMO.JCL.XMI)                                
+                  DSN(&HLQ..GVBDEMO.JCL)         RELEASE                    
+     ```
+1. Update the JOB statement above to conform to your installation's standards
+1. Set the value of HLQ above to your TSO Prefix. For example:  
         SET HLQ=APERSON 
-12. Submit the job to expand the transfer data sets into the installation data sets.  
-13. Update the JCL in \<your-tso-prefix\>.GVBDEMO.JCL(GENDATA) according to the comments there and submit the job to generate the demo data.
-14. Update the JCL in \<your-tso-prefix\>.GVBDEMO.JCL(RUNPASS1) according to the comments there and submit the job to execute the GenevaERS Demo Pass 1.  
-15. Review the following control reports in your job output: 
+1. Submit the job to expand the transfer data sets into the installation data sets.  
+1. Update the JCL in \<your-tso-prefix\>.GVBDEMO.JCL(GENDATA) according to the comments there and submit the job to generate the demo data.
+1. Update the JCL in \<your-tso-prefix\>.GVBDEMO.JCL(RUNPASS1) according to the comments there and submit the job to execute the GenevaERS Demo Pass 1.  
+1. Review the following control reports in your job output: 
      - MR91RPT - This report is from program GVBMR91 (the Logic Phase), which specifies the work to be done in the current run.  It also optimizes the work to allow the upcoming Extract Phase to perform multiple operations in a single pass of the source data.  For more about what the demo does, see https://github.com/genevaers/demo/blob/main/docs/WhatDemoDoes.md
      - REFRRPT - This report is from program GVBMR95R (the Reference Phase), which pre-processes reference data to conserve memory in the Extract Phase
      - EXTRRPT - This report is from program GVBMR95E (the Extract Phase), which reads one or more source data files, performs table lookups and transformations, and writes one or more output files.  
      - MR88RPT - This report is from program GVBMR88 (the Format Phase), which sorts, summarizes, and formats the data if necessary.  
-16. Review the following data sets that were output from this run: 
+1. Review the following data sets that were output from this run: 
      - \<your-tso-prefix>\.GVBDEMO.PASS1.DAGSTATO
      - \<your-tso-prefix>\.GVBDEMO.PASS1.DCOBYSTO
      - \<your-tso-prefix>\.GVBDEMO.PASS1.DCUSTORO
