@@ -14,38 +14,38 @@ Prerequisites:
 The installation process for the GenevaERS Performance Engine will create several mainframe data sets whose names begin with your TSO Prefix.  (This is  the same as your TSO ID, unless you have changed it to something else by using the TSO PROFILE PREFIX command.)  Using the TSO Prefix as the high-level qualifier of the installation data sets allows us to avoid enclosing data set names with single-quote marks in any TSO commands mentioned below or in file transfer processes.  
 
 1. Copy the following JCL and paste it into a JCL library member in your mainframe session: 
-```
-//ALCDEMO  JOB (ACCT),CLASS=A,MSGCLASS=X,MSGLEVEL=(1,1),NOTIFY=&SYSUID.
-//*
-//         EXPORT SYMLIST=*
-//         SET HLQ=<your-tso-prefix>
-//*
-//DELFILES EXEC PGM=IDCAMS
-//SYSPRINT DD SYSOUT=*
-//SYSIN    DD *,SYMBOLS=EXECSYS
- DELETE  &HLQ..GVBDEMO.GVBLOAD.XMI  PURGE
- DELETE  &HLQ..GVBDEMO.WB.XML.XMI   PURGE
- DELETE  &HLQ..GVBDEMO.JCL.XMI      PURGE
- IF MAXCC LE 8 THEN         /* IF OPERATION FAILED,     */    -
-     SET MAXCC = 0          /* PROCEED AS NORMAL ANYWAY */
-//*
-//ALLOCATE EXEC PGM=IEFBR14
-//GVBLOAD  DD DSN=&HLQ..GVBDEMO.GVBLOAD.XMI,
-//            DISP=(NEW,CATLG,DELETE),
-//            UNIT=SYSDA,
-//            SPACE=(TRK,(3000,300)),
-//            DCB=(DSORG=PS,RECFM=FB,LRECL=80,BLKSIZE=3120)             
-//WBXML    DD DSN=&HLQ..GVBDEMO.WB.XML.XMI,                             
-//            DISP=(NEW,CATLG,DELETE),
-//            UNIT=SYSDA,
-//            SPACE=(TRK,(10,10)),
-//            DCB=(DSORG=PS,RECFM=FB,LRECL=80,BLKSIZE=3120)
-//JCL      DD DSN=&HLQ..GVBDEMO.JCL.XMI,
-//            DISP=(NEW,CATLG,DELETE),
-//            UNIT=SYSDA,
-//            SPACE=(TRK,(10,10)),
-//            DCB=(DSORG=PS,RECFM=FB,LRECL=80,BLKSIZE=3120)
-```
+    ```
+    //ALCDEMO  JOB (ACCT),CLASS=A,MSGCLASS=X,MSGLEVEL=(1,1),NOTIFY=&SYSUID.
+    //*
+    //         EXPORT SYMLIST=*
+    //         SET HLQ=<your-tso-prefix>
+    //*
+    //DELFILES EXEC PGM=IDCAMS 
+    //SYSPRINT DD SYSOUT=*
+    //SYSIN    DD *,SYMBOLS=EXECSYS
+    DELETE  &HLQ..GVBDEMO.GVBLOAD.XMI  PURGE
+    DELETE  &HLQ..GVBDEMO.WB.XML.XMI   PURGE
+    DELETE  &HLQ..GVBDEMO.JCL.XMI      PURGE
+    IF MAXCC LE 8 THEN         /* IF OPERATION FAILED,     */    -
+         SET MAXCC = 0          /* PROCEED AS NORMAL ANYWAY */
+    //*
+    //ALLOCATE EXEC PGM=IEFBR14
+    //GVBLOAD  DD DSN=&HLQ..GVBDEMO.GVBLOAD.XMI,
+    //            DISP=(NEW,CATLG,DELETE),
+    //            UNIT=SYSDA,
+    //            SPACE=(TRK,(3000,300)),
+    //            DCB=(DSORG=PS,RECFM=FB,LRECL=80,BLKSIZE=3120)             
+    //WBXML    DD DSN=&HLQ..GVBDEMO.WB.XML.XMI,                             
+    //            DISP=(NEW,CATLG,DELETE),
+    //            UNIT=SYSDA,
+    //            SPACE=(TRK,(10,10)),
+    //            DCB=(DSORG=PS,RECFM=FB,LRECL=80,BLKSIZE=3120)
+    //JCL      DD DSN=&HLQ..GVBDEMO.JCL.XMI,
+    //            DISP=(NEW,CATLG,DELETE),
+    //            UNIT=SYSDA,
+    //            SPACE=(TRK,(10,10)),
+    //            DCB=(DSORG=PS,RECFM=FB,LRECL=80,BLKSIZE=3120)
+    ```
 2. Update the JOB statement above to conform to your installation's standards.
 3. Set the value of HLQ above to your TSO Prefix. For example:  
         SET HLQ=APERSON
