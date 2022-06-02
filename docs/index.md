@@ -4,7 +4,7 @@ title: Home
 nav_order: 1
 ---
 
-# Home - GenevaERS Demo documentation
+# GenevaERS Demo documentation
 
 ## Demo topics
 
