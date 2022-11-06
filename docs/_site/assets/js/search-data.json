@@ -2,145 +2,145 @@
     "doc": "After the Demo",
     "title": "After you have run the Demo",
     "content": " ",
-    "url": "http://localhost:4000/demo/AfterDemo.html#after-you-have-run-the-demo",
+    "url": "/AfterDemo.html#after-you-have-run-the-demo",
     "relUrl": "/AfterDemo.html#after-you-have-run-the-demo"
   },"1": {
     "doc": "After the Demo",
-    "title": "Scale up data and see GenevaERS's Reaction",
-    "content": "The Data Generator program allows you to increase the amount of demo data created on your system. You can increase the data volumes from the default values, and see how the GenevaERS Performance Engine reacts. | In the JCL Member DTGENRUN, change the following parameter to increase or decrease the number of orders contained in the demo file. The default is 5,000,000 orders. | . // SET ORDERMAX=5000000 . | If generating more than 2 billion orders, adjust the space allocation parameters on the ORDER and each of the Order Item (ORDITMnn) output datasets from the GVBDTGEN program. | Each order (the parameter above) generates about 47 bytes. | . //ORDER ... // SPACE=(TRK,(5000,500),RLSE), . | Order Items are 5.5 times the Orders, and are 36 bytes long. | . //ORDITM01 ... // SPACE=(TRK,(9000,500),RLSE), //ORDITM02 ... // SPACE=(TRK,(9000,500),RLSE), //ORDITM03 ... // SPACE=(TRK,(9000,500),RLSE), . | Run the DTGENRUN job to generate the new data volumes. | Run the RUNEXT1 again. | Inspect the EXTRPT report in the RUNEXT1 sysout to see the impact on the run of the differing data volumes. | . ",
-    "url": "http://localhost:4000/demo/AfterDemo.html#scale-up-data-and-see-genevaerss-reaction",
+    "title": "Scale up data and see GenevaERS’s Reaction",
+    "content": "The Data Generator program allows you to increase the amount of demo data created on your system. You can increase the data volumes from the default values, and see how the GenevaERS Performance Engine reacts. | In the JCL Member DTGENRUN, change the following parameter to increase or decrease the number of orders contained in the demo file. The default is 5,000,000 orders. // SET ORDERMAX=5000000 . | If generating more than 2 billion orders, adjust the space allocation parameters on the ORDER and each of the Order Item (ORDITMnn) output datasets from the GVBDTGEN program. | Each order (the parameter above) generates about 47 bytes. //ORDER ... // SPACE=(TRK,(5000,500),RLSE), . | Order Items are 5.5 times the Orders, and are 36 bytes long. //ORDITM01 ... // SPACE=(TRK,(9000,500),RLSE), //ORDITM02 ... // SPACE=(TRK,(9000,500),RLSE), //ORDITM03 ... // SPACE=(TRK,(9000,500),RLSE), . | . | Run the DTGENRUN job to generate the new data volumes. | Run the RUNEXT1 again. | Inspect the EXTRPT report in the RUNEXT1 sysout to see the impact on the run of the differing data volumes. | . ",
+    "url": "/AfterDemo.html#scale-up-data-and-see-genevaerss-reaction",
     "relUrl": "/AfterDemo.html#scale-up-data-and-see-genevaerss-reaction"
   },"2": {
     "doc": "After the Demo",
     "title": "Do your own processing in GenevaERS",
     "content": "When you have run the Demo and seen what GenevaERS can do, the next step is configure your own processing. The way to do that is in a part of GenevaERS called the Workbench. You will be able to see how the Demo was configured, and then configure your own processing. To download and run the Workbench, see GenevaERS workbench doc. ",
-    "url": "http://localhost:4000/demo/AfterDemo.html#do-your-own-processing-in-genevaers",
+    "url": "/AfterDemo.html#do-your-own-processing-in-genevaers",
     "relUrl": "/AfterDemo.html#do-your-own-processing-in-genevaers"
   },"3": {
     "doc": "After the Demo",
     "title": "After the Demo",
     "content": " ",
-    "url": "http://localhost:4000/demo/AfterDemo.html",
+    "url": "/AfterDemo.html",
     "relUrl": "/AfterDemo.html"
   },"4": {
     "doc": "Charter",
     "title": "GenevaERS Charter PDF",
     "content": "Link . ",
-    "url": "http://localhost:4000/demo/GenevaERSCharter.html#genevaers-charter-pdf",
+    "url": "/GenevaERSCharter.html#genevaers-charter-pdf",
     "relUrl": "/GenevaERSCharter.html#genevaers-charter-pdf"
   },"5": {
     "doc": "Charter",
     "title": "Charter",
     "content": " ",
-    "url": "http://localhost:4000/demo/GenevaERSCharter.html",
+    "url": "/GenevaERSCharter.html",
     "relUrl": "/GenevaERSCharter.html"
   },"6": {
     "doc": "Install",
     "title": "Install the GenevaERS Demo",
-    "content": "Prerequisites: . | IBM z13 mainframe or later | IBM z/OS V2R3 or later | IBM DFSORT or compatible sort utility | . The installation process for the GenevaERS Performance Engine will create several mainframe data sets whose names begin with your TSO Prefix. (This is the same as your TSO ID, unless you have changed it to something else by using the TSO PROFILE PREFIX command.) Using the TSO Prefix as the high-level qualifier of the installation data sets allows us to avoid enclosing data set names with single-quote marks in any TSO commands mentioned below or in file transfer processes. | Copy the following JCL and paste it into a JCL library member in your mainframe session://ALCDEMO JOB (ACCT),CLASS=A,MSGCLASS=X,MSGLEVEL=(1,1),NOTIFY=&amp;SYSUID. //* // EXPORT SYMLIST=* // SET HLQ=&lt;your-tso-prefix&gt; //* //DELFILES EXEC PGM=IDCAMS //SYSPRINT DD SYSOUT=* //SYSIN DD *,SYMBOLS=EXECSYS DELETE &amp;HLQ..GVBDEMO.GVBLOAD.XMI PURGE DELETE &amp;HLQ..GVBDEMO.WB.XML.XMI PURGE DELETE &amp;HLQ..GVBDEMO.JCL.XMI PURGE IF MAXCC LE 8 THEN /* IF OPERATION FAILED, */ - SET MAXCC = 0 /* PROCEED AS NORMAL ANYWAY */ //* //ALLOCATE EXEC PGM=IEFBR14 //GVBLOAD DD DSN=&amp;HLQ..GVBDEMO.GVBLOAD.XMI, // DISP=(NEW,CATLG,DELETE), // UNIT=SYSDA, // SPACE=(TRK,(3000,300)), // DCB=(DSORG=PS,RECFM=FB,LRECL=80,BLKSIZE=3120) //WBXML DD DSN=&amp;HLQ..GVBDEMO.WB.XML.XMI, // DISP=(NEW,CATLG,DELETE), // UNIT=SYSDA, // SPACE=(TRK,(10,10)), // DCB=(DSORG=PS,RECFM=FB,LRECL=80,BLKSIZE=3120) //JCL DD DSN=&amp;HLQ..GVBDEMO.JCL.XMI, // DISP=(NEW,CATLG,DELETE), // UNIT=SYSDA, // SPACE=(TRK,(10,10)), // DCB=(DSORG=PS,RECFM=FB,LRECL=80,BLKSIZE=3120) . | Update the JOB statement above to conform to your installation's standards. | Set the value of HLQ above to your TSO Prefix. For example: SET HLQ=APERSON | Submit the job to pre-allocate the transfer data sets. | In a new tab on your browser, navigate to the GenevaERS Performance Engine Demo page: https://github.com/genevaers/demo | In the new tab from the previous step, find &quot;Releases&quot; on the right which is under the &quot;About&quot; section. Click on the green &quot;Latest&quot; button. | Select each of these files on the Latest Release page and download them to your local drive. | GVBDEMO.JCL.XMI | GVBDEMO.GVBLOAD.XMI | GVBDEMO.WB.XML.XMI | . | Using your preferred file transfer technique, upload the following files in binary mode from your local drive to your mainframe, overwriting the transfer data sets that have just been allocated: . | GVBDEMO.JCL.XMI | GVBDEMO.GVBLOAD.XMI | GVBDEMO.WB.XML.XMI | . | Copy the following JCL and paste it into a JCL library member in your mainframe session://RCVDEMO JOB (ACCT),CLASS=A,MSGCLASS=X,MSGLEVEL=(1,1),NOTIFY=&amp;SYSUID. //* // EXPORT SYMLIST=* // SET HLQ=&lt;your-tso-prefix&gt; //* //DELFILES EXEC PGM=IDCAMS //SYSPRINT DD SYSOUT=* //SYSIN DD *,SYMBOLS=EXECSYS DELETE &amp;HLQ..GVBDEMO.GVBLOAD PURGE DELETE &amp;HLQ..GVBDEMO.WB.XML PURGE DELETE &amp;HLQ..GVBDEMO.JCL PURGE IF MAXCC LE 8 THEN /* IF OPERATION FAILED, */ - SET MAXCC = 0 /* PROCEED AS NORMAL ANYWAY */ //* //RECEIVE EXEC PGM=IKJEFT01,DYNAMNBR=30 //SYSTSPRT DD SYSOUT=* //SYSTSIN DD *,SYMBOLS=EXECSYS PROFILE NOPREFIX RECEIVE INDSN(&amp;HLQ..GVBDEMO.GVBLOAD.XMI) DSN(&amp;HLQ..GVBDEMO.GVBLOAD) RELEASE RECEIVE INDSN(&amp;HLQ..GVBDEMO.WB.XML.XMI) DSN(&amp;HLQ..GVBDEMO.WB.XML) RELEASE RECEIVE INDSN(&amp;HLQ..GVBDEMO.JCL.XMI) DSN(&amp;HLQ..GVBDEMO.JCL) RELEASE . | Update the JOB statement above to conform to your installation's standards | Set the value of HLQ above to your TSO Prefix. For example: SET HLQ=APERSON | Submit the job to expand the transfer data sets into the installation data sets. | Update the JCL in &lt;your-tso-prefix&gt;.GVBDEMO.JCL(GENDATA) according to the comments there and submit the job to generate the demo data. | Update the JCL in &lt;your-tso-prefix&gt;.GVBDEMO.JCL(RUNPASS1) according to the comments there and submit the job to execute the GenevaERS Demo Pass 1. | Review the following control reports in your job output: . | MR91RPT - This report is from program GVBMR91 (the Logic Phase), which specifies the work to be done in the current run. It also optimizes the work to allow the upcoming Extract Phase to perform multiple operations in a single pass of the source data. For more about what the demo does, see https://github.com/genevaers/demo/blob/main/docs/WhatDemoDoes.md | REFRRPT - This report is from program GVBMR95R (the Reference Phase), which pre-processes reference data to conserve memory in the Extract Phase | EXTRRPT - This report is from program GVBMR95E (the Extract Phase), which reads one or more source data files, performs table lookups and transformations, and writes one or more output files. | MR88RPT - This report is from program GVBMR88 (the Format Phase), which sorts, summarizes, and formats the data if necessary. | . | Review the following data sets that were output from this run: . | &lt;your-tso-prefix&gt;.GVBDEMO.PASS1.DAGSTATO | &lt;your-tso-prefix&gt;.GVBDEMO.PASS1.DCOBYSTO | &lt;your-tso-prefix&gt;.GVBDEMO.PASS1.DCUSTORO | &lt;your-tso-prefix&gt;.GVBDEMO.PASS1.DEXLKUP0 | . | . ",
-    "url": "http://localhost:4000/demo/InstallDemo.html#install-the-genevaers-demo",
+    "content": "Prerequisites: . | IBM z13 mainframe or later | IBM z/OS V2R3 or later | IBM DFSORT or compatible sort utility | . The installation process for the GenevaERS Performance Engine will create several mainframe data sets whose names begin with your TSO Prefix. (This is the same as your TSO ID, unless you have changed it to something else by using the TSO PROFILE PREFIX command.) Using the TSO Prefix as the high-level qualifier of the installation data sets allows us to avoid enclosing data set names with single-quote marks in any TSO commands mentioned below or in file transfer processes. | Copy the following JCL and paste it into a JCL library member in your mainframe session: //ALCDEMO JOB (ACCT),CLASS=A,MSGCLASS=X,MSGLEVEL=(1,1),NOTIFY=&amp;SYSUID. //* // EXPORT SYMLIST=* // SET HLQ=&lt;your-tso-prefix&gt; //* //DELFILES EXEC PGM=IDCAMS //SYSPRINT DD SYSOUT=* //SYSIN DD *,SYMBOLS=EXECSYS DELETE &amp;HLQ..GVBDEMO.GVBLOAD.XMI PURGE DELETE &amp;HLQ..GVBDEMO.WB.XML.XMI PURGE DELETE &amp;HLQ..GVBDEMO.JCL.XMI PURGE IF MAXCC LE 8 THEN /* IF OPERATION FAILED, */ - SET MAXCC = 0 /* PROCEED AS NORMAL ANYWAY */ //* //ALLOCATE EXEC PGM=IEFBR14 //GVBLOAD DD DSN=&amp;HLQ..GVBDEMO.GVBLOAD.XMI, // DISP=(NEW,CATLG,DELETE), // UNIT=SYSDA, // SPACE=(TRK,(3000,300)), // DCB=(DSORG=PS,RECFM=FB,LRECL=80,BLKSIZE=3120) //WBXML DD DSN=&amp;HLQ..GVBDEMO.WB.XML.XMI, // DISP=(NEW,CATLG,DELETE), // UNIT=SYSDA, // SPACE=(TRK,(10,10)), // DCB=(DSORG=PS,RECFM=FB,LRECL=80,BLKSIZE=3120) //JCL DD DSN=&amp;HLQ..GVBDEMO.JCL.XMI, // DISP=(NEW,CATLG,DELETE), // UNIT=SYSDA, // SPACE=(TRK,(10,10)), // DCB=(DSORG=PS,RECFM=FB,LRECL=80,BLKSIZE=3120) . | Update the JOB statement above to conform to your installation’s standards. | Set the value of HLQ above to your TSO Prefix. For example: SET HLQ=APERSON | Submit the job to pre-allocate the transfer data sets. | In a new tab on your browser, navigate to the GenevaERS Performance Engine Demo page: https://github.com/genevaers/demo | In the new tab from the previous step, find “Releases” on the right which is under the “About” section. Click on the green “Latest” button. | Select each of these files on the Latest Release page and download them to your local drive. | GVBDEMO.JCL.XMI | GVBDEMO.GVBLOAD.XMI | GVBDEMO.WB.XML.XMI | . | Using your preferred file transfer technique, upload the following files in binary mode from your local drive to your mainframe, overwriting the transfer data sets that have just been allocated: . | GVBDEMO.JCL.XMI | GVBDEMO.GVBLOAD.XMI | GVBDEMO.WB.XML.XMI | . | Copy the following JCL and paste it into a JCL library member in your mainframe session: //RCVDEMO JOB (ACCT),CLASS=A,MSGCLASS=X,MSGLEVEL=(1,1),NOTIFY=&amp;SYSUID. //* // EXPORT SYMLIST=* // SET HLQ=&lt;your-tso-prefix&gt; //* //DELFILES EXEC PGM=IDCAMS //SYSPRINT DD SYSOUT=* //SYSIN DD *,SYMBOLS=EXECSYS DELETE &amp;HLQ..GVBDEMO.GVBLOAD PURGE DELETE &amp;HLQ..GVBDEMO.WB.XML PURGE DELETE &amp;HLQ..GVBDEMO.JCL PURGE IF MAXCC LE 8 THEN /* IF OPERATION FAILED, */ - SET MAXCC = 0 /* PROCEED AS NORMAL ANYWAY */ //* //RECEIVE EXEC PGM=IKJEFT01,DYNAMNBR=30 //SYSTSPRT DD SYSOUT=* //SYSTSIN DD *,SYMBOLS=EXECSYS PROFILE NOPREFIX RECEIVE INDSN(&amp;HLQ..GVBDEMO.GVBLOAD.XMI) DSN(&amp;HLQ..GVBDEMO.GVBLOAD) RELEASE RECEIVE INDSN(&amp;HLQ..GVBDEMO.WB.XML.XMI) DSN(&amp;HLQ..GVBDEMO.WB.XML) RELEASE RECEIVE INDSN(&amp;HLQ..GVBDEMO.JCL.XMI) DSN(&amp;HLQ..GVBDEMO.JCL) RELEASE . | Update the JOB statement above to conform to your installation’s standards | Set the value of HLQ above to your TSO Prefix. For example: SET HLQ=APERSON | Submit the job to expand the transfer data sets into the installation data sets. | Update the JCL in &lt;your-tso-prefix&gt;.GVBDEMO.JCL(GENDATA) according to the comments there and submit the job to generate the demo data. | Update the JCL in &lt;your-tso-prefix&gt;.GVBDEMO.JCL(RUNPASS1) according to the comments there and submit the job to execute the GenevaERS Demo Pass 1. | Review the following control reports in your job output: . | MR91RPT - This report is from program GVBMR91 (the Logic Phase), which specifies the work to be done in the current run. It also optimizes the work to allow the upcoming Extract Phase to perform multiple operations in a single pass of the source data. For more about what the demo does, see https://github.com/genevaers/demo/blob/main/docs/WhatDemoDoes.md | REFRRPT - This report is from program GVBMR95R (the Reference Phase), which pre-processes reference data to conserve memory in the Extract Phase | EXTRRPT - This report is from program GVBMR95E (the Extract Phase), which reads one or more source data files, performs table lookups and transformations, and writes one or more output files. | MR88RPT - This report is from program GVBMR88 (the Format Phase), which sorts, summarizes, and formats the data if necessary. | . | Review the following data sets that were output from this run: . | &lt;your-tso-prefix&gt;.GVBDEMO.PASS1.DAGSTATO | &lt;your-tso-prefix&gt;.GVBDEMO.PASS1.DCOBYSTO | &lt;your-tso-prefix&gt;.GVBDEMO.PASS1.DCUSTORO | &lt;your-tso-prefix&gt;.GVBDEMO.PASS1.DEXLKUP0 | . | . ",
+    "url": "/InstallDemo.html#install-the-genevaers-demo",
     "relUrl": "/InstallDemo.html#install-the-genevaers-demo"
   },"7": {
     "doc": "Install",
     "title": "Next Topics",
     "content": "What the Demo does . Link to Demo repo in GitHub . ",
-    "url": "http://localhost:4000/demo/InstallDemo.html#next-topics",
+    "url": "/InstallDemo.html#next-topics",
     "relUrl": "/InstallDemo.html#next-topics"
   },"8": {
     "doc": "Install",
     "title": "Install",
     "content": " ",
-    "url": "http://localhost:4000/demo/InstallDemo.html",
+    "url": "/InstallDemo.html",
     "relUrl": "/InstallDemo.html"
   },"9": {
     "doc": "Videos",
     "title": "Videos",
     "content": "GenevaERS 60 second intro . More videos are being prepared. ",
-    "url": "http://localhost:4000/demo/VideosGenevaERS.html",
+    "url": "/VideosGenevaERS.html",
     "relUrl": "/VideosGenevaERS.html"
   },"10": {
     "doc": "Videos",
     "title": "Website",
     "content": "GenevaERS.org . ",
-    "url": "http://localhost:4000/demo/VideosGenevaERS.html#website",
+    "url": "/VideosGenevaERS.html#website",
     "relUrl": "/VideosGenevaERS.html#website"
   },"11": {
     "doc": "What the Demo does",
     "title": "What the Demo does",
     "content": " ",
-    "url": "http://localhost:4000/demo/WhatDemoDoes.html",
+    "url": "/WhatDemoDoes.html",
     "relUrl": "/WhatDemoDoes.html"
   },"12": {
     "doc": "What the Demo does",
-    "title": "What's Produced",
-    "content": "This demo contains dummy data generated by a program. It has several large order item files, and separate reference files for orders, products, stores and customers. By looking at the data names, you can guess what kind of data they contain. GenevaERS Demo Data Diagram . This demo creates these reports: . | All orders including customer and product details, output to a combination of files DD Names OUTPUT01, 2 and 3 in the RUNEXT1 job. | A summary of all orders by customer, output to DD Name DCUSTORO in the RUNFMT1 job. | A summary of all orders by customer, and by store location output to DD Name DCOBYSTO in the RUNFMT2 job. | A summary of products sold, by store location, output to the DD Name DAGSTATO in the RUNFMT3 job. | . It creates the reports by reading all the data only once (rather than each report re-reading all the data). This is why GenevaERS is called the &quot;Single-Pass Optimization Engine&quot; - all input data is read only once. ",
-    "url": "http://localhost:4000/demo/WhatDemoDoes.html#whats-produced",
+    "title": "What’s Produced",
+    "content": "This demo contains dummy data generated by a program. It has several large order item files, and separate reference files for orders, products, stores and customers. By looking at the data names, you can guess what kind of data they contain. GenevaERS Demo Data Diagram . This demo creates these reports: . | All orders including customer and product details, output to a combination of files DD Names OUTPUT01, 2 and 3 in the RUNEXT1 job. | A summary of all orders by customer, output to DD Name DCUSTORO in the RUNFMT1 job. | A summary of all orders by customer, and by store location output to DD Name DCOBYSTO in the RUNFMT2 job. | A summary of products sold, by store location, output to the DD Name DAGSTATO in the RUNFMT3 job. | . It creates the reports by reading all the data only once (rather than each report re-reading all the data). This is why GenevaERS is called the “Single-Pass Optimization Engine” - all input data is read only once. ",
+    "url": "/WhatDemoDoes.html#whats-produced",
     "relUrl": "/WhatDemoDoes.html#whats-produced"
   },"13": {
     "doc": "What the Demo does",
     "title": "How It Works",
-    "content": "Users tell GenevaERS what to do in a &quot;view&quot; which essentially describes inputs, processing, and outputs. Each report is specified in a view, for example. Sometimes there are intermediate views that collect data and process data and present it to the later view for further processing. GenevaERS processes each view in the Performance Engine, which can be described as a data scan engine. The Performance Engine analyzes the views, generates the most efficient machine instructions to read the source data only once, optimizes the joins to additional data sources and runs multiple threads to scan the data in parallel. The demo produces output using these views:: . | 10689 Extract With Lookups View - Create an order list that includes Store and Customer information and write output data into three files (one file per store) . | 10700 Extract Order Item Order View - Perform intermediate data transformations and store output data in memory . | 10702 Summary Customer Order Sales View - Generate a summarized order report by reading data created by a view 10700 . | 10714 Summary Customer Order By State Sales View - Generate a summarized customer report by reading data created by view 10700 . | 10715 Summary Product Qty Sold By State View - Create summarized product quantity report . | . Each view has a unique ID. A view has a data source, a list of output fields and an output format, and specifies how to select input records (for example orders at a location during a time period), and how to select output records (for example ignoring zero cases). A view can specify additional data joins (such as using a product code to find product details in a product file). A view can also specify calculations to achieve the required output (for example currency conversion). A view hence describes the inputs and how to achieve the outputs. GenevaERS Demo View Flow . These views read data from five source files (three order items, an order, and a customer file). Each view creates an output. Note view number 10700 is an intermediate processing view producing a virtual file (never written to disk) feeding data to views 10702 and 10714. Let’s examine the EXTRRPT, the Performance Engine Execution Summary report, produced in the submitted RUNEXT1 job: . Views processed: 5 Parallel threads executed: 5 Lookup steps performed: 89,317,465 . Source files read: 5 Source records read: 140,922,959 Source bytes read: 1,487,800,938 . Output files written: 5 Output records written: 4,308,570 Output bytes written: 799,657,615 . Elapsed time (HHHH:MM:SS.hh): 0:00:23.09 Elapsed time (seconds): 23.09 . As you can see a Performance Engine executed five threads to read the 140,922,959 records from the source files in parallel. It wrote 4,308,570 output records into five files but read the source data only once. It also performed 89,317,465 joins. All the data scan requests are completed in 23.09 seconds. After running demo you can do more with After the demo. ",
-    "url": "http://localhost:4000/demo/WhatDemoDoes.html#how-it-works",
+    "content": "Users tell GenevaERS what to do in a “view” which essentially describes inputs, processing, and outputs. Each report is specified in a view, for example. Sometimes there are intermediate views that collect data and process data and present it to the later view for further processing. GenevaERS processes each view in the Performance Engine, which can be described as a data scan engine. The Performance Engine analyzes the views, generates the most efficient machine instructions to read the source data only once, optimizes the joins to additional data sources and runs multiple threads to scan the data in parallel. The demo produces output using these views:: . | 10689 Extract With Lookups View - Create an order list that includes Store and Customer information and write output data into three files (one file per store) . | 10700 Extract Order Item Order View - Perform intermediate data transformations and store output data in memory . | 10702 Summary Customer Order Sales View - Generate a summarized order report by reading data created by a view 10700 . | 10714 Summary Customer Order By State Sales View - Generate a summarized customer report by reading data created by view 10700 . | 10715 Summary Product Qty Sold By State View - Create summarized product quantity report . | . Each view has a unique ID. A view has a data source, a list of output fields and an output format, and specifies how to select input records (for example orders at a location during a time period), and how to select output records (for example ignoring zero cases). A view can specify additional data joins (such as using a product code to find product details in a product file). A view can also specify calculations to achieve the required output (for example currency conversion). A view hence describes the inputs and how to achieve the outputs. GenevaERS Demo View Flow . These views read data from five source files (three order items, an order, and a customer file). Each view creates an output. Note view number 10700 is an intermediate processing view producing a virtual file (never written to disk) feeding data to views 10702 and 10714. Let’s examine the EXTRRPT, the Performance Engine Execution Summary report, produced in the submitted RUNEXT1 job: . Views processed: 5 Parallel threads executed: 5 Lookup steps performed: 89,317,465 . Source files read: 5 Source records read: 140,922,959 Source bytes read: 1,487,800,938 . Output files written: 5 Output records written: 4,308,570 Output bytes written: 799,657,615 . Elapsed time (HHHH:MM:SS.hh): 0:00:23.09 Elapsed time (seconds): 23.09 . As you can see a Performance Engine executed five threads to read the 140,922,959 records from the source files in parallel. It wrote 4,308,570 output records into five files but read the source data only once. It also performed 89,317,465 joins. All the data scan requests are completed in 23.09 seconds. After running demo you can do more with After the demo. ",
+    "url": "/WhatDemoDoes.html#how-it-works",
     "relUrl": "/WhatDemoDoes.html#how-it-works"
   },"14": {
     "doc": "What the Demo does",
     "title": "Next Topics",
     "content": "Install the Demo . After the demo . Link to Demo repo in GitHub . ",
-    "url": "http://localhost:4000/demo/WhatDemoDoes.html#next-topics",
+    "url": "/WhatDemoDoes.html#next-topics",
     "relUrl": "/WhatDemoDoes.html#next-topics"
   },"15": {
     "doc": "What is GenevaERS?",
     "title": "What is GenevaERS?",
     "content": " ",
-    "url": "http://localhost:4000/demo/WhatIsGenevaERS.html",
+    "url": "/WhatIsGenevaERS.html",
     "relUrl": "/WhatIsGenevaERS.html"
   },"16": {
     "doc": "What is GenevaERS?",
     "title": "(in less than 140 words)",
     "content": ". GenevaERS fixes log jams in your computer processing. For example, a customer program took 25 hours to run. GenevaERS did it in less than one hour - on the same data on the same computer producing the same results. How is that possible? . Reads from disk are 1000 times slower than calculations. Too many reads waste time. Example: a product file has 1,000 records and a sales file has a million records. A report program reads the product file for each sales transaction. That means the report reads the product file a million times. GenevaERS reads the product file just 1,000 times. GenevaERS is fast because it saves 999,000 reads. You could fix this by rewriting your programs. GenevaERS is free and does the programming for you. A paid version is even faster using special features. ",
-    "url": "http://localhost:4000/demo/WhatIsGenevaERS.html#in-less-than-140-words",
+    "url": "/WhatIsGenevaERS.html#in-less-than-140-words",
     "relUrl": "/WhatIsGenevaERS.html#in-less-than-140-words"
   },"17": {
     "doc": "What is GenevaERS?",
     "title": "Next Topic",
     "content": "Install the Demo . Videos about GenevaERS . ",
-    "url": "http://localhost:4000/demo/WhatIsGenevaERS.html#next-topic",
+    "url": "/WhatIsGenevaERS.html#next-topic",
     "relUrl": "/WhatIsGenevaERS.html#next-topic"
   },"18": {
     "doc": "About",
     "title": "About this website",
     "content": "This website: . | covers the demo for GenevaERS . | is a work-in-progress . | uses GitHub Flavoured Markdown. | . ",
-    "url": "http://localhost:4000/demo/about/#about-this-website",
+    "url": "/about/#about-this-website",
     "relUrl": "/about/#about-this-website"
   },"19": {
     "doc": "About",
     "title": "About",
     "content": " ",
-    "url": "http://localhost:4000/demo/about/",
+    "url": "/about/",
     "relUrl": "/about/"
   },"20": {
     "doc": "Home",
-    "title": "Home - GenevaERS Demo documentation",
+    "title": "GenevaERS Demo documentation",
     "content": " ",
-    "url": "http://localhost:4000/demo/#home---genevaers-demo-documentation",
-    "relUrl": "/#home---genevaers-demo-documentation"
+    "url": "/#genevaers-demo-documentation",
+    "relUrl": "/#genevaers-demo-documentation"
   },"21": {
     "doc": "Home",
     "title": "Demo topics",
     "content": "Install the Demo . What the Demo does . After the demo . Link to Demo repo in GitHub . ",
-    "url": "http://localhost:4000/demo/#demo-topics",
+    "url": "/#demo-topics",
     "relUrl": "/#demo-topics"
   },"22": {
     "doc": "Home",
     "title": "Background info",
     "content": "What is GenevaERS? . Videos about GenevaERS . GenevaERS Charter PDF . ",
-    "url": "http://localhost:4000/demo/#background-info",
+    "url": "/#background-info",
     "relUrl": "/#background-info"
   },"23": {
     "doc": "Home",
     "title": "Home",
     "content": " ",
-    "url": "http://localhost:4000/demo/",
+    "url": "/",
     "relUrl": "/"
   }
 }
