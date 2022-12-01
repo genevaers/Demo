@@ -1,0 +1,7 @@
+1	SalesOrders
+2	SalesDone
+3	WarrantyFixOrders
+4	WarrantyFixesDone
+5	ReturnRequests
+6	ReturnsDone
+7	GeneralExpenses

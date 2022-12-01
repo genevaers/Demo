@@ -1,0 +1,11 @@
+1	Products
+2	ProductTypes
+3	SerialNums
+4	SalesLocations
+5	SalesLocTypes
+6	Employees
+7	Factories
+8	Installers
+9	Customers
+10	StateTaxes
+11	ExpenseTypes
