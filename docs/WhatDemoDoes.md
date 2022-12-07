@@ -52,20 +52,20 @@ These views read data from five source files (three order items, an order, and a
 
 Let’s examine the EXTRRPT, the Performance Engine Execution Summary report, produced in the submitted RUNEXT1 job: 
 
->Views processed:                5
->Parallel threads executed:      5
->Lookup steps performed:         89,317,465
+    Views processed:                5
+    Parallel threads executed:      5
+    Lookup steps performed:         89,317,465
 
->Source files read:              5
->Source records read:            140,922,959
->Source bytes read:              1,487,800,938
+    Source files read:              5
+    Source records read:            140,922,959
+    Source bytes read:              1,487,800,938
 
->Output files written:           5
->Output records written:         4,308,570
->Output bytes written:           799,657,615
+    Output files written:           5
+    Output records written:         4,308,570
+    Output bytes written:           799,657,615
 
->Elapsed time (HHHH:MM:SS.hh):   0:00:23.09
->Elapsed time (seconds):         23.09
+    Elapsed time (HHHH:MM:SS.hh):   0:00:23.09
+    Elapsed time (seconds):         23.09
 
 As you can see a Performance Engine executed five threads to read the 140,922,959 records from the source files in parallel. It wrote 4,308,570
 output records into five files but read the source data only once. It also performed 89,317,465 joins.
