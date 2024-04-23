@@ -30,10 +30,10 @@ GenevaERS is free and does the programming for you.
 
 A paid version is even faster using special features.
 
+See more at [GenevaERS]https://genevaers.org/
+
 -----
 
 ## Next Topic
 
 [Install the Demo](InstallDemo.md)
-
-[Videos about GenevaERS](VideosGenevaERS.md)
