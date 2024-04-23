@@ -20,6 +20,6 @@ nav_order: 1
 
 [What is GenevaERS?](WhatIsGenevaERS.md)
 
-~~[GenevaERS Documentation](https://genevaers.github.io/User-Documentation/)
+[GenevaERS Documentation](https://genevaers.github.io/User-Documentation/)
 
-[The GenevaERS Project](https://genevaers.org/)~~
+[The GenevaERS Project](https://genevaers.org/)
