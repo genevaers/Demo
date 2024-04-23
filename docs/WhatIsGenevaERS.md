@@ -37,3 +37,7 @@ See more at [GenevaERS]https://genevaers.org/
 ## Next Topic
 
 [Install the Demo](InstallDemo.md)
+
+[GenevaERS Documentation](https://genevaers.github.io/User-Documentation/)
+
+[The GenevaERS Project](https://genevaers.org/)~~~~
