@@ -42,4 +42,4 @@ When you have run the Demo and seen what GenevaERS can do, the next step is conf
 
 The way to do that is in a part of GenevaERS called the Workbench.  You will be able to see how the Demo was configured, and then configure your own processing.
 
-To download and run the Workbench, see [GenevaERS workbench doc](https://genevaers.github.io/wb/).
+To download and run the Workbench, see [GenevaERS doc](https://genevaers.github.io/User-Documentation/Setup%20and%20Use/).

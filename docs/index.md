@@ -20,6 +20,6 @@ nav_order: 1
 
 [What is GenevaERS?](WhatIsGenevaERS.md)
 
-[Videos about GenevaERS](VideosGenevaERS.md)
+[GenevaERS Documentation](https://genevaers.github.io/User-Documentation/)
 
-[GenevaERS Charter PDF](GenevaERSCharter.md)
+[The GenevaERS Project](https://genevaers.org/) 

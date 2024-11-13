@@ -111,5 +111,9 @@ The installation process for the GenevaERS Performance Engine will create severa
 
 [What the Demo does](WhatDemoDoes.md)
 
+[GenevaERS Documentation](https://genevaers.github.io/User-Documentation/)
+
+[The GenevaERS Project](https://genevaers.org/)~~~~
+
 [Link to Demo repo in GitHub](https://github.com/genevaers/demo)
 
