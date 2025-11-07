@@ -10,7 +10,10 @@
 //*        SET HLQ=<YOUR-TSO-PREFIX>
 //         SET MLQ=GVBDEMO
 //*
+//         JCLLIB ORDER=AJV.V11R0M0.PROCLIB
+//*
 //JOBLIB   DD DISP=SHR,DSN=&HLQ..&MLQ..GVBLOAD
+//         DD DISP=SHR,DSN=AJV.V11R0M0.SIEALNKE
 //*
 //*********************************************************************
 //*
@@ -54,20 +57,78 @@
 
 //*
 //*********************************************************************
-//* CREATE THE RUN CONTROL FILES
+//* CREATE THE RUN CONTROL FILES: Batch step to run the Java VM
 //*********************************************************************
 //*
-//PSTEP205 EXEC PGM=GVBMR91
+//* LICENSED MATERIALS - PROPERTY OF IBM
+//* 5655-DGJ
+//* COPYRIGHT IBM CORP. 1997, 2021
+//* STATUS = HJVBB00
 //*
-//MR91PARM DD *
- INPUT_TYPE               = WBXML      DEFAULT: (NONE)  DD: WBXMLI
- OUTPUT_RUN_CONTROL_FILES = Y          DEFAULT: N       DD: VDP,JLT,XLT
+//*********************************************************************
+//*
+//JAVA EXEC PROC=JVMPRC16,
+// JAVACLS='org.genevaers.rcapps.Runner'
+//STDENV DD *
+. /etc/profile
+export A2E=-ofrom=ISO8859-1,to=IBM-1047
+export JAVA_HOME=/Java/J17.0_64
+export IBM_JAVA_OPTIONS="-Dfile.encoding=ISO8859-1"
 
-*TRACE                    = Y           DEFAULT: N
-*NUMBER_MODE              = LARGE      DEFAULT: STANDARD
+LIBPATH=/lib:/usr/lib:"$JAVA_HOME"/bin
+LIBPATH="$LIBPATH":"$JAVA_HOME"/lib
+LIBPATH="$LIBPATH":"$JAVA_HOME"/lib/j9vm
+export LIBPATH="$LIBPATH":
+
+export APP_HOME=/u/safrbld/RCA
+export APP_NAME=rcapps-latest.jar
+export CLASSPATH=$APP_HOME:"$JAVA_HOME"/lib
+
+# Customize your CLASSPATH here
+# Add Application required jars to end of CLASSPATH
+CLASSPATH="$CLASSPATH":"$APP_HOME"/"$APP_NAME"
+echo $CLASSPATH
+export CLASSPATH="$CLASSPATH":
+
+# Set JZOS specific options
+# Use this variable to specify encoding for DD STDOUT and STDERR
+#export JZOS_OUTPUT_ENCODING=Cp1047
+# Use this variable to prevent JZOS from handling MVS operator commands
+#export JZOS_ENABLE_MVS_COMMANDS=false
+# Use this variable to supply additional arguments to main
+#export JZOS_MAIN_ARGS=""
+
+# Configure JVM options
+IJO="-Xms16m -Xmx128m"
+# Uncomment the following to aid in debugging "Class Not Found" problems
+#IJO="$IJO -verbose:class"
+# Uncomment the following if you want to run with Ascii file encoding..
+IJO="$IJO -Dfile.encoding=ISO8859-1"
+export IBM_JAVA_OPTIONS="$IJO "
+/*
 //*
-//WBXMLI   DD DSN=&HLQ..&MLQ..WB.XML,
+//WBXMLI   DD DSN=&HLQ..&MLQ..WBXMLI,
 //            DISP=SHR
+//*
+//RCAPARM  DD *
+# Input
+INPUT_TYPE=WBXML
+LOG_LEVEL=FINEST
+COMPARE=N
+GENERATE_RC_FILES=Y
+REPORT_FORMAT=TXT
+VDP_REPORT=Y
+JLT_REPORT=Y
+XLT_REPORT=Y
+NUMBER_MODE=STANDARD
+/*
+//DBVIEWS DD *
+10700
+10689
+10702
+10714
+10715
+/*
 //*
 //*        <<< OUTPUT GENEVAERS CONTROL FILES >>>
 //*
@@ -89,12 +150,11 @@
 //            SPACE=(TRK,(1000,1000),RLSE),
 //            DSORG=PS,RECFM=VB,LRECL=820
 //*
-//CEEDUMP  DD SYSOUT=*
-//LEMSG    DD SYSOUT=*
-//SYSOUT   DD SYSOUT=*
-//MR91RPT  DD SYSOUT=*
-//MR91LOG  DD SYSOUT=*
-//MR91TRAC DD SYSOUT=*
+//RCARPT  DD SYSOUT=*,DCB=(RECFM=VB,LRECL=255)
+//RCALOG  DD SYSOUT=*,DCB=(RECFM=VB,LRECL=255)
+//VDPRPT  DD SYSOUT=*,DCB=(RECFM=VB,LRECL=255)
+//XLTRPT  DD SYSOUT=*,DCB=(RECFM=VB,LRECL=255)
+//JLTRPT  DD SYSOUT=*,DCB=(RECFM=VB,LRECL=255)
 //*
 //*********************************************************************
 //* IF THE PRIOR STEP SETS AN INVALID RETURN CODE, TERMINATE THE JOB
