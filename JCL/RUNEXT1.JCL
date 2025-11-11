@@ -132,19 +132,19 @@ NUMBER_MODE=STANDARD
 //*
 //*        <<< OUTPUT GENEVAERS CONTROL FILES >>>
 //*
-//VDP      DD DSN=&HLQ..&MLQ..PASS1C1.VDP,
+//VDPNEW   DD DSN=&HLQ..&MLQ..PASS1C1.VDP,
 //            DISP=(NEW,CATLG,DELETE),
 //            UNIT=SYSDA,
 //            SPACE=(TRK,(1000,1000),RLSE),
 //            DSORG=PS,RECFM=VB,LRECL=32756
 //*
-//JLT      DD DSN=&HLQ..&MLQ..PASS1C1.JLT,
+//JLTNEW   DD DSN=&HLQ..&MLQ..PASS1C1.JLT,
 //            DISP=(NEW,CATLG,DELETE),
 //            UNIT=SYSDA,
 //            SPACE=(TRK,(1000,1000),RLSE),
 //            DSORG=PS,RECFM=VB,LRECL=820
 //*
-//XLT      DD DSN=&HLQ..&MLQ..PASS1C1.XLT,
+//XLTNEW   DD DSN=&HLQ..&MLQ..PASS1C1.XLT,
 //            DISP=(NEW,CATLG,DELETE),
 //            UNIT=SYSDA,
 //            SPACE=(TRK,(1000,1000),RLSE),
@@ -161,7 +161,7 @@ NUMBER_MODE=STANDARD
 //*********************************************************************
 //*
 //PSTEP206 EXEC PGM=GVBUT99,
-//            COND=(4,GE,PSTEP205),
+//            COND=(4,GE),
 //            PARM='1099'
 //SYSPRINT DD SYSOUT=*
 //*
