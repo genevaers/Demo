@@ -7,9 +7,9 @@
 3) IBM DFSORT or compatible sort utility
 
 ## Download the release contents
-The installation process for the GenevaERS Performance Engine will create several MVS datasets. It also copies a Java .jar file to a USS directory.
+The installation process for the GenevaERS Performance Engine will create several MVS datasets. It also copies a Java .jar file to a USS directory. This is the run control application (RCA).
 
-This is the run control application (RCA). In a new tab on your browser, navigate to the GenevaERS Performance Engine Demo page:  
+In a new tab on your browser, navigate to the GenevaERS Performance Engine Demo page:  
 ```
 https://github.com/genevaers/demo
 ```
@@ -82,7 +82,7 @@ Copy the following JCL and paste it into a JCL library member in your mainframe 
 //SYSPRINT DD SYSOUT=*                                                 
 //SYSIN    DD *,SYMBOLS=EXECSYS                                        
  DELETE  &HLQ..GVBDEMO.GVBLOAD  PURGE                                  
- DELETE  &HLQ..GVBDEMO.WB.XML   PURGE                                  
+ DELETE  &HLQ..GVBDEMO.WBXML    PURGE                                  
  DELETE  &HLQ..GVBDEMO.JCL      PURGE                                  
  IF MAXCC LE 8 THEN         /* IF OPERATION FAILED,     */    -        
      SET MAXCC = 0          /* PROCEED AS NORMAL ANYWAY */             
@@ -93,8 +93,8 @@ Copy the following JCL and paste it into a JCL library member in your mainframe 
   PROFILE NOPREFIX                                                     
   RECEIVE  INDSN(&HLQ..GVBDEMO.GVBLOAD.XMI)                            
              DSN(&HLQ..GVBDEMO.GVBLOAD)     RELEASE                    
-  RECEIVE  INDSN(&HLQ..GVBDEMO.WB.XML.XMI)                             
-             DSN(&HLQ..GVBDEMO.WB.XML)      RELEASE                    
+  RECEIVE  INDSN(&HLQ..GVBDEMO.WBXML.XMI)                             
+             DSN(&HLQ..GVBDEMO.WBXML)       RELEASE                    
   RECEIVE  INDSN(&HLQ..GVBDEMO.JCL.XMI)                                
              DSN(&HLQ..GVBDEMO.JCL)         RELEASE                    
 ```
@@ -129,31 +129,26 @@ The DEMO comprises the following jobs:
 3) RUNFMT2
 4) RUNFMT3
 
-Update the JCL in <your-tso-prefix>.GVBDEMO.JCL library according to the comments there and submit the first job to execute the GenevaERS Demo extract phase. This job will submit the 3 Format phase jobs upon completion.
+Update the JCL in <your-tso-prefix>.GVBDEMO.JCL library according to the comments there and submit the first job RUNEXT1 to execute the GenevaERS Demo Run Control and Extract phases. This job will submit the 3 Format phase jobs upon completion.
+
+For more about what the demo does, see
 ```
-For more about what the demo does, see https://github.com/genevaers/demo/blob/main/docs/WhatDemoDoes.md
+ https://github.com/genevaers/demo/blob/main/docs/WhatDemoDoes.md
 ```
-RCARPT
-
-REFRRPT - This report is from program GVBMR95R (the Reference Phase), which pre-processes reference data to conserve memory in the Extract Phase
-
-EXTRRPT - This report is from program GVBMR95E (the Extract Phase), which reads one or more source data files, performs table lookups and transformations, and writes one or more output files.
-
-MR88RPT - This report is from program GVBMR88 (the Format Phase), which sorts, summarizes, and formats the data if necessary.
 
 ## Output dataset from GVBDEMO
 
 After running the DEMO review the following data sets that were output from this run:
-
-``
+```
 <your-tso-prefix>.GVBDEMO.PASS1.DAGSTATO
+
 <your-tso-prefix>.GVBDEMO.PASS1.DCOBYSTO
+
 <your-tso-prefix>.GVBDEMO.PASS1.DCUSTORO
+
 <your-tso-prefix>.GVBDEMO.PASS1.DEXLKUP0
-``
+```
 
 # Further documentation for GVBDEMO
 
-Note: Please see the full documentation [here](https://genevaers.github.io/Demo/)
-
-
+**Note:** Please see the full documentation [here](https://genevaers.github.io/Demo/)
