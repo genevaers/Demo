@@ -114,6 +114,8 @@ rcapps-4.1.0_RC21.jar
 
 ## Creating symbolic link and adding permissions
 
+touch rcapps-latest.jar;
+rm rcapps-latest.jar;
 ln -s rcapps-rcapps-4.1.0_RC21.jar rcapps-latest.jar
 
 # Generate the DEMO data
