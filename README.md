@@ -116,26 +116,43 @@ rcapps-4.1.0_RC21.jar
 
 ln -s rcapps-rcapps-4.1.0_RC21.jar rcapps-latest.jar
 
-# Documentation for GVBDEMO
-
-
-
-
-
+# Generate the DEMO data
 
 Update the JCL in <your-tso-prefix>.GVBDEMO.JCL(GENDATA) according to the comments there and submit the job to generate the demo data.
-Update the JCL in <your-tso-prefix>.GVBDEMO.JCL(RUNPASS1) according to the comments there and submit the job to execute the GenevaERS Demo Pass 1.
-Review the following control reports in your job output:
-MR91RPT - This report is from program GVBMR91 (the Logic Phase), which specifies the work to be done in the current run.  It also optimizes the work to allow the upcoming Extract Phase to perform multiple operations in a single pass of the source data.  For more about what the demo does, see https://github.com/genevaers/demo/blob/main/docs/WhatDemoDoes.md
+
+# GVBDEMO JCL
+
+The DEMO comprises the following jobs:
+
+1) RUNEXT1
+2) RUNFMT1
+3) RUNFMT2
+4) RUNFMT3
+
+Update the JCL in <your-tso-prefix>.GVBDEMO.JCL library according to the comments there and submit the first job to execute the GenevaERS Demo extract phase. This job will submit the 3 Format phase jobs upon completion.
+```
+For more about what the demo does, see https://github.com/genevaers/demo/blob/main/docs/WhatDemoDoes.md
+```
+RCARPT
+
 REFRRPT - This report is from program GVBMR95R (the Reference Phase), which pre-processes reference data to conserve memory in the Extract Phase
+
 EXTRRPT - This report is from program GVBMR95E (the Extract Phase), which reads one or more source data files, performs table lookups and transformations, and writes one or more output files.
+
 MR88RPT - This report is from program GVBMR88 (the Format Phase), which sorts, summarizes, and formats the data if necessary.
+
+## Output dataset from GVBDEMO
+
 Review the following data sets that were output from this run:
+
+``
 <your-tso-prefix>.GVBDEMO.PASS1.DAGSTATO
 <your-tso-prefix>.GVBDEMO.PASS1.DCOBYSTO
 <your-tso-prefix>.GVBDEMO.PASS1.DCUSTORO
 <your-tso-prefix>.GVBDEMO.PASS1.DEXLKUP0
+``
 
+# Further documentation for GVBDEMO
 
 Note: Please see the full documentation [here](https://genevaers.github.io/Demo/)
 
