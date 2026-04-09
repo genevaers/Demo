@@ -143,7 +143,7 @@ MR88RPT - This report is from program GVBMR88 (the Format Phase), which sorts, s
 
 ## Output dataset from GVBDEMO
 
-Review the following data sets that were output from this run:
+After running the DEMO review the following data sets that were output from this run:
 
 ``
 <your-tso-prefix>.GVBDEMO.PASS1.DAGSTATO
