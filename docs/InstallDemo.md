@@ -122,7 +122,7 @@ touch rcapps-latest.jar;
 rm rcapps-latest.jar;
 ln -s rcapps-4.1.0_<RCnn>.jar rcapps-latest.jar
 ```
-# Generate the DEMO data
+## Generate the DEMO data
 
 Update the JCL in <your-tso-prefix>.GVBDEMO.JCL(GENDATA) according to the comments there and submit the job to generate the demo data. The test data comprises the following 10 files, the 3 Order Item files being the largest:
 
@@ -137,7 +137,7 @@ Update the JCL in <your-tso-prefix>.GVBDEMO.JCL(GENDATA) according to the commen
 - \<your-tso-prefix>\.GVBDEMO.CUSTADDR
 - \<your-tso-prefix>\.GVBDEMO.STOREADR
 
-# GVBDEMO JCL
+## GVBDEMO JCL
 
 The DEMO itself comprises the following 4 jobs:
 
