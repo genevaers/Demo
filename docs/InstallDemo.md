@@ -108,7 +108,7 @@ Update the JOB statement above to conform to your installation's standards. Set 
 
 Logging onto USS use mkdir to create a directory under your user ID
 ```
-/u/<userid>/git/public/RCA_jar
+mkdir /u/<userid>/git/public/RCA_jar
 ```
 ## Copy RCA .jar file to USS directory
 
