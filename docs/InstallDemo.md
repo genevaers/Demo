@@ -104,7 +104,7 @@ Copy the following JCL and paste it into a JCL library member in your mainframe 
 ```
 Update the JOB statement above to conform to your installation's standards. Set the value of HLQ above to your TSO Prefix. Submit the job to expand the transfer data sets into the installation data sets.
 
-## Allocation USS directory to contain RCA .jar file
+## Allocate USS directory to contain RCA .jar file
 
 Logging onto USS use mkdir to create a directory under your user ID
 ```
@@ -128,7 +128,7 @@ Update the JCL in <your-tso-prefix>.GVBDEMO.JCL(GENDATA) according to the commen
 
 # GVBDEMO JCL
 
-The DEMO comprises the following jobs:
+The DEMO itself comprises the following 4 jobs:
 
 1) RUNEXT1
 2) RUNFMT1
@@ -141,11 +141,11 @@ Update the JCL in <your-tso-prefix>.GVBDEMO.JCL library according to the comment
 
   RCARPT - This report is from program RCA (the Run Control Phase), which specifies the work to be done in the current run.  It also optimizes the work to allow the upcoming Extract Phase to perform multiple operations in a single pass of the source data.
 
-  REFRRPT - This report is from program GVBMR95R (the Reference Phase), which pre-processes reference data to conserve memory in the Extract Phase
+  REFRRPT - This report is from program GVBMR95R (the Reference Phase), which pre-processes reference data to conserve memory and optimize lookups in the Extract Phase
 
   EXTRRPT - This report is from program GVBMR95E (the Extract Phase), which reads one or more source data files, performs table lookups and transformations, and writes one or more output files.
 
-  MR88RPT - This report is from program GVBMR88 (the Format Phase), which sorts, summarizes, and formats the data if necessary.  
+  MR88RPT - This report is from program GVBMR88 (the Format Phases), which sorts, summarizes, and formats the data as necessary.  
 
 ## Review the following data sets that were output from this run: 
 
