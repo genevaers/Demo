@@ -69,9 +69,9 @@ Update the JOB statement above to conform to your installation's standards. Set 
 
 Using your preferred file transfer technique, upload the following files in binary mode from your local drive to your mainframe, overwriting the transfer data sets that have just been allocated:
 
-1) GVBDEMO.JCL.XMI
-2) GVBDEMO.GVBLOAD.XMI
-3) GVBDEMO.WBXML.XMI
+- GVBDEMO.JCL.XMI
+- GVBDEMO.GVBLOAD.XMI
+- GVBDEMO.WBXML.XMI
 
 ## RECEIVE XMI files to extract MVS datasets
 
@@ -141,10 +141,10 @@ Update the JCL in <your-tso-prefix>.GVBDEMO.JCL(GENDATA) according to the commen
 
 The DEMO itself comprises the following 4 jobs:
 
-1) RUNEXT1
-2) RUNFMT1
-3) RUNFMT2
-4) RUNFMT3
+- RUNEXT1
+- RUNFMT1
+- RUNFMT2
+- RUNFMT3
 
 Update the JCL in <your-tso-prefix>.GVBDEMO.JCL library according to the comments there and submit the first job RUNEXT1 to execute the GenevaERS Demo Run Control and Extract phases. This job will submit the 3 Format phase jobs upon completion.
 
