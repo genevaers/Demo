@@ -5,15 +5,39 @@
 //          MSGLEVEL=(1,1),
 //          MSGCLASS=X
 //*
+//********************************************************************
+//*
+//* (C) COPYRIGHT IBM CORPORATION 2025.
+//*    COPYRIGHT CONTRIBUTORS TO THE GENEVAERS PROJECT.
+//*SPDX-LICENSE-IDENTIFIER: APACHE-2.0
+//*
+//********************************************************************
+//*
+//*  LICENSED UNDER THE APACHE LICENSE, VERSION 2.0 (THE "LICENSE");
+//*  YOU MAY NOT USE THIS FILE EXCEPT IN COMPLIANCE WITH THE LICENSE.
+//*  YOU MAY OBTAIN A COPY OF THE LICENSE AT
+//*
+//*     HTTP://WWW.APACHE.ORG/LICENSES/LICENSE-2.0
+//*
+//*  UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING, SOFTWARE
+//*  DISTRIBUTED UNDER THE LICENSE IS DISTRIBUTED ON AN "AS IS" BASIS,
+//*  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, EITHER EXPRESS
+//*  OR IMPLIED.
+//*  SEE THE LICENSE FOR THE SPECIFIC LANGUAGE GOVERNING PERMISSIONS
+//*  AND LIMITATIONS UNDER THE LICENSE.
+//*
+//********************************************************************
+//* RUN PERFORMANCE ENGINE EXTRACT PHASE
+//********************************************************************
+//*
 //         EXPORT SYMLIST=*
 //*
 //*        SET HLQ=<YOUR-TSO-PREFIX>
 //         SET MLQ=GVBDEMO
+//         SET LOADLIB=&HLQ..&MLQ..GVBLOAD
+//         SET JZOSLIB=AJV.V11R0M0.SIEALNKE
 //*
 //         JCLLIB ORDER=AJV.V11R0M0.PROCLIB
-//*
-//JOBLIB   DD DISP=SHR,DSN=&HLQ..&MLQ..GVBLOAD
-//         DD DISP=SHR,DSN=AJV.V11R0M0.SIEALNKE
 //*
 //*********************************************************************
 //*
@@ -57,32 +81,45 @@
 
 //*
 //*********************************************************************
-//* CREATE THE RUN CONTROL FILES: Batch step to run the Java VM
+//* CREATE THE RUN CONTROL FILES
 //*********************************************************************
-//*
 //* LICENSED MATERIALS - PROPERTY OF IBM
 //* 5655-DGJ
 //* COPYRIGHT IBM CORP. 1997, 2021
 //* STATUS = HJVBB00
 //*
-//*********************************************************************
+//* BATCH JOB TO RUN THE JAVA VM
+//*
+//* TAILOR THE PROC AND JOB FOR YOUR INSTALLATION:
+//* 1.) MODIFY THE JOB CARD PER YOUR INSTALLATION'S REQUIREMENTS
+//* 2.) MODIFY THE PROCLIB CARD TO POINT TO THIS PDS
+//* 3.) EDIT JAVA_HOME TO POINT THE LOCATION OF THE SDK
+//* 4.) EDIT APP_HOME TO POINT THE LOCATION OF YOUR APP (IF ANY)
+//* 5.) MODIFY THE CLASSPATH AS REQUIRED TO POINT TO YOUR JAVA CODE
+//* 6.) MODIFY JAVACLS AND ARGS TO LAUNCH DESIRED JAVA CLASS
+//*
+//*******************************************************************
 //*
 //JAVA EXEC PROC=JVMPRC16,
 // JAVACLS='org.genevaers.rcapps.Runner'
-//STDENV DD *
+//STEPLIB  DD DISP=SHR,DSN=&JZOSLIB
+//STDENV DD *,SYMBOLS=EXECSYS
 . /etc/profile
 export A2E=-ofrom=ISO8859-1,to=IBM-1047
 export JAVA_HOME=/Java/J17.0_64
 export IBM_JAVA_OPTIONS="-Dfile.encoding=ISO8859-1"
 
+# specify location of your RCA applications (GERS_RCA_JAR_DIR) below
+
+export APP_HOME=/u/<userid>/git/public/RCA_jar
+
+export APP_NAME=rcapps-latest.jar
+export CLASSPATH=$APP_HOME:"$JAVA_HOME"/lib
+
 LIBPATH=/lib:/usr/lib:"$JAVA_HOME"/bin
 LIBPATH="$LIBPATH":"$JAVA_HOME"/lib
 LIBPATH="$LIBPATH":"$JAVA_HOME"/lib/j9vm
 export LIBPATH="$LIBPATH":
-
-export APP_HOME=/u/safrbld/RCA
-export APP_NAME=rcapps-latest.jar
-export CLASSPATH=$APP_HOME:"$JAVA_HOME"/lib
 
 # Customize your CLASSPATH here
 # Add Application required jars to end of CLASSPATH
@@ -106,11 +143,9 @@ IJO="-Xms16m -Xmx128m"
 IJO="$IJO -Dfile.encoding=ISO8859-1"
 export IBM_JAVA_OPTIONS="$IJO "
 /*
+//*        INPUTS
 //*
-//WBXMLI   DD DSN=&HLQ..&MLQ..WBXMLI,
-//            DISP=SHR
-//*
-//RCAPARM  DD *
+//RCAPARM  DD *,SYMBOLS=EXECSYS
 # Input
 INPUT_TYPE=WBXML
 LOG_LEVEL=FINEST
@@ -129,6 +164,11 @@ NUMBER_MODE=STANDARD
 10714
 10715
 /*
+//*
+//* PDS or PDSE containing the input XML file(s) from Workbench
+//*
+//WBXMLI   DD DSN=&HLQ..GVBDEMO.WBXMLI,
+//             DISP=SHR
 //*
 //*        <<< OUTPUT GENEVAERS CONTROL FILES >>>
 //*
@@ -152,6 +192,7 @@ NUMBER_MODE=STANDARD
 //*
 //RCARPT  DD SYSOUT=*,DCB=(RECFM=VB,LRECL=255)
 //RCALOG  DD SYSOUT=*,DCB=(RECFM=VB,LRECL=255)
+//*
 //VDPRPT  DD SYSOUT=*,DCB=(RECFM=VB,LRECL=255)
 //XLTRPT  DD SYSOUT=*,DCB=(RECFM=VB,LRECL=255)
 //JLTRPT  DD SYSOUT=*,DCB=(RECFM=VB,LRECL=255)
@@ -161,8 +202,9 @@ NUMBER_MODE=STANDARD
 //*********************************************************************
 //*
 //PSTEP206 EXEC PGM=GVBUT99,
-//            COND=(4,GE),
+//            COND=(4,GE,JAVA),
 //            PARM='1099'
+//STEPLIB  DD DISP=SHR,DSN=&LOADLIB
 //SYSPRINT DD SYSOUT=*
 //*
 //*********************************************************************
@@ -195,6 +237,7 @@ NUMBER_MODE=STANDARD
 //*
 //PSTEP505 EXEC PGM=GVBMR95R,
 // REGION=0M
+//STEPLIB  DD DISP=SHR,DSN=&LOADLIB
 //*
 //*        <<< INPUT GENEVAERS FILES >>>
 //*
@@ -319,14 +362,16 @@ NUMBER_MODE=STANDARD
 //PSTEP506 EXEC PGM=GVBUT99,
 //            COND=(1,GE,PSTEP505),
 //            PARM='1099'
+//STEPLIB  DD DISP=SHR,DSN=&LOADLIB
+//SYSPRINT DD SYSOUT=*
 //*
 //*********************************************************************
 //* DELETE THE FILE(S) CREATED IN NEXT STEP
 //*********************************************************************
 //*
 //PSTEP700 EXEC PGM=IDCAMS
-//*
 //SYSPRINT DD SYSOUT=*
+//*
 //*
 //SYSIN    DD *,SYMBOLS=EXECSYS
  /* VIEW DATA SETS: */
@@ -356,6 +401,7 @@ NUMBER_MODE=STANDARD
 //*
 //PSTEP705 EXEC PGM=GVBMR95E,
 // REGION=0M
+//STEPLIB  DD DISP=SHR,DSN=&LOADLIB
 //*
 //*        <<< INPUT GENEVAERS FILES >>>
 //*
@@ -507,6 +553,8 @@ $QUAL=SDATRT01
 //PSTEP706 EXEC PGM=GVBUT99,
 //            COND=(1,GE,PSTEP705),
 //            PARM='1099'
+//STEPLIB  DD DISP=SHR,DSN=&LOADLIB
+//SYSPRINT DD SYSOUT=*
 //*
 //*******************************************************************
 //* JSTEPNX1 - SUBMIT NEXT JOB: FORMAT JOB 1
