@@ -20,12 +20,12 @@ https://github.com/genevaers/demo
 
 Navigate to "Releases" of the GVBDEMO repository on the right which is under the "About" section.  Click on the green "Latest" button.
 Select each of these files on the Latest Release page and download them to your local drive.
-```
-1) GVBDEMO.JCL.XMI
-2) GVBDEMO.GVBLOAD.XMI
-3) GVBDEMO.WBXML.XMI
-4) rcapps-4.1.0_<RCnn>.jar
-```
+
+- GVBDEMO.JCL.XMI
+- GVBDEMO.GVBLOAD.XMI
+- GVBDEMO.WBXML.XMI
+- rcapps-4.1.0_<RCnn>.jar
+
 ## Pre-allocate MVS datasets
 
 The prefix for the MVS datasets is  the same as your TSO ID.  Using the TSO ID as the high-level qualifier of the installation of the MVS datasets simplifies the installation.
@@ -160,10 +160,10 @@ Update the JCL in <your-tso-prefix>.GVBDEMO.JCL library according to the comment
 
 ## Review the following data sets that were output from this run: 
 
-     - \<your-tso-prefix>\.GVBDEMO.PASS1.DAGSTATO
-     - \<your-tso-prefix>\.GVBDEMO.PASS1.DCOBYSTO
-     - \<your-tso-prefix>\.GVBDEMO.PASS1.DCUSTORO
-     - \<your-tso-prefix>\.GVBDEMO.PASS1.DEXLKUP0
+- \<your-tso-prefix>\.GVBDEMO.PASS1.DAGSTATO
+- \<your-tso-prefix>\.GVBDEMO.PASS1.DCOBYSTO
+- \<your-tso-prefix>\.GVBDEMO.PASS1.DCUSTORO
+- \<your-tso-prefix>\.GVBDEMO.PASS1.DEXLKUP0
 
 ## Next Topics
 
