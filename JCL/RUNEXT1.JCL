@@ -34,7 +34,7 @@
 //*
 //*        SET HLQ=<YOUR-TSO-PREFIX>
 //         SET MLQ=GVBDEMO
-//         SET LOADLIB=GEBT.LATEST.GVBLOAD
+//         SET LOADLIB=&HLQ..&MLQ..GVBLOAD
 //         SET JZOSLIB=AJV.V11R0M0.SIEALNKE
 //*
 //         JCLLIB ORDER=AJV.V11R0M0.PROCLIB
@@ -167,7 +167,7 @@ NUMBER_MODE=STANDARD
 //*
 //* PDS or PDSE containing the input XML file(s) from Workbench
 //*
-//WBXMLI   DD DSN=GEBT.GVBDEMO.WBXMLI,
+//WBXMLI   DD DSN=&HLQ..GVBDEMO.WBXMLI,
 //             DISP=SHR
 //*
 //*        <<< OUTPUT GENEVAERS CONTROL FILES >>>
