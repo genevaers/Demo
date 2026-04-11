@@ -23,7 +23,7 @@ Select each of these files on the Latest Release page and download them to your 
 
 - GVBDEMO.JCL.XMI
 - GVBDEMO.GVBLOAD.XMI
-- GVBDEMO.WBXML.XMI
+- GVBDEMO.WBXMLI.XMI
 - rcapps-4.1.0_<RCnn>.jar
 
 ## Pre-allocate MVS datasets
@@ -41,7 +41,7 @@ Copy the following JCL and paste it into a JCL library member in your mainframe 
 //SYSPRINT DD SYSOUT=*
 //SYSIN    DD *,SYMBOLS=EXECSYS
  DELETE  &HLQ..GVBDEMO.GVBLOAD.XMI  PURGE
- DELETE  &HLQ..GVBDEMO.WBXML.XMI    PURGE
+ DELETE  &HLQ..GVBDEMO.WBXMLI.XMI   PURGE
  DELETE  &HLQ..GVBDEMO.JCL.XMI      PURGE
  IF MAXCC LE 8 THEN         /* IF OPERATION FAILED,     */    -
      SET MAXCC = 0          /* PROCEED AS NORMAL ANYWAY */
@@ -52,7 +52,7 @@ Copy the following JCL and paste it into a JCL library member in your mainframe 
 //            UNIT=SYSDA,
 //            SPACE=(TRK,(3000,300)),
 //            DCB=(DSORG=PS,RECFM=FB,LRECL=80,BLKSIZE=3120)             
-//WBXML    DD DSN=&HLQ..GVBDEMO.WBXML.XMI,                             
+//WBXML    DD DSN=&HLQ..GVBDEMO.WBXMLI.XMI,                             
 //            DISP=(NEW,CATLG,DELETE),
 //            UNIT=SYSDA,
 //            SPACE=(TRK,(10,10)),
@@ -71,7 +71,7 @@ Using your preferred file transfer technique, upload the following files in bina
 
 - GVBDEMO.JCL.XMI
 - GVBDEMO.GVBLOAD.XMI
-- GVBDEMO.WBXML.XMI
+- GVBDEMO.WBXMLI.XMI
 
 ## RECEIVE XMI files to extract MVS datasets
 
@@ -86,7 +86,7 @@ Copy the following JCL and paste it into a JCL library member in your mainframe 
 //SYSPRINT DD SYSOUT=*                                                 
 //SYSIN    DD *,SYMBOLS=EXECSYS                                        
  DELETE  &HLQ..GVBDEMO.GVBLOAD  PURGE                                  
- DELETE  &HLQ..GVBDEMO.WBXML    PURGE                                  
+ DELETE  &HLQ..GVBDEMO.WBXMLI   PURGE                                  
  DELETE  &HLQ..GVBDEMO.JCL      PURGE                                  
  IF MAXCC LE 8 THEN         /* IF OPERATION FAILED,     */    -        
      SET MAXCC = 0          /* PROCEED AS NORMAL ANYWAY */             
@@ -97,8 +97,8 @@ Copy the following JCL and paste it into a JCL library member in your mainframe 
   PROFILE NOPREFIX                                                     
   RECEIVE  INDSN(&HLQ..GVBDEMO.GVBLOAD.XMI)                            
              DSN(&HLQ..GVBDEMO.GVBLOAD)     RELEASE                    
-  RECEIVE  INDSN(&HLQ..GVBDEMO.WBXML.XMI)                             
-             DSN(&HLQ..GVBDEMO.WBXML)       RELEASE                    
+  RECEIVE  INDSN(&HLQ..GVBDEMO.WBXMLI.XMI)                             
+             DSN(&HLQ..GVBDEMO.WBXMLI)      RELEASE                    
   RECEIVE  INDSN(&HLQ..GVBDEMO.JCL.XMI)                                
              DSN(&HLQ..GVBDEMO.JCL)         RELEASE                    
 ```
