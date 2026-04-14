@@ -9,6 +9,7 @@ nav_order: 3
 Prerequisites:
 - IBM z13 mainframe or later
 - IBM z/OS V2R3 or later
+- Java Version 21 or later
 - IBM DFSORT or compatible sort utility
 
 ## Download the release contents
