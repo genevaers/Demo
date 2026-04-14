@@ -24,7 +24,7 @@ Select each of these files on the Latest Release page and download them to your 
 - GVBDEMO.JCL.XMI
 - GVBDEMO.GVBLOAD.XMI
 - GVBDEMO.WBXMLI.XMI
-- rcapps-4.1.0_<RCnn>.jar
+- rcapps-4.1.0_\<RCnn\>.jar
 
 ## Pre-allocate MVS datasets
 
@@ -124,7 +124,7 @@ ln -s rcapps-4.1.0_<RCnn>.jar rcapps-latest.jar
 ```
 ## Generate the DEMO data
 
-Update the JCL in <your-tso-prefix>.GVBDEMO.JCL(GENDATA) according to the comments there and submit the job to generate the demo data. The test data comprises the following 10 files, the 3 Order Item files being the largest totalling 27,500,000 records by default:
+Update the JCL in \<your-tso-prefix\>.GVBDEMO.JCL(GENDATA) according to the comments there and submit the job to generate the demo data. The test data comprises the following 10 files, the 3 Order Item files being the largest totalling 27,500,000 records by default:
 
 - \<your-tso-prefix>\.GVBDEMO.CUSTOMER
 - \<your-tso-prefix>\.GVBDEMO.CUSTNAME
@@ -146,7 +146,7 @@ The DEMO itself comprises the following 4 jobs:
 - RUNFMT2
 - RUNFMT3
 
-Update the JCL in <your-tso-prefix>.GVBDEMO.JCL library according to the comments there and submit the first job RUNEXT1 to execute the GenevaERS Demo Run Control and Extract phases. This job will submit the 3 Format phase jobs upon completion.
+Update the JCL in \<your-tso-prefix\>.GVBDEMO.JCL library according to the comments there and submit the first job RUNEXT1 to execute the GenevaERS Demo Run Control and Extract phases. This job will submit the 3 Format phase jobs upon completion.
 
 ## Review the following control reports in your job output
 
