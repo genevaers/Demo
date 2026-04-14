@@ -13,13 +13,14 @@ Prerequisites:
 
 ## Download the release contents
 
-The installation process for the GenevaERS Performance Engine will create several MVS datasets. It also copies a Java .jar file to a USS directory. This is the run control application (RCA). In a new tab on your browser, navigate to the GenevaERS Performance Engine Demo page.  
-```
-https://github.com/genevaers/demo
-```
+The installation process for the GenevaERS Performance Engine will create several MVS datasets. It also copies a Java .jar file to a z/OS UNIX directory; this is the run control application (RCA).  
 
-Navigate to "Releases" of the GVBDEMO repository on the right which is under the "About" section.  Click on the green "Latest" button.
-Select each of these files on the Latest Release page and download them to your local drive.
+In a new tab on your browser, navigate to the GenevaERS Performance Engine Demo page.  
+```
+https://github.com/genevaers/Demo
+```
+On the right side of the GitHub page, click **Releases**, which is below the **About** section.  Click on the green "Latest" button. 
+Download the following files to your local drive:
 
 - GVBDEMO.JCL.XMI
 - GVBDEMO.GVBLOAD.XMI
@@ -28,7 +29,7 @@ Select each of these files on the Latest Release page and download them to your 
 
 ## Pre-allocate MVS datasets
 
-The prefix for the MVS datasets is  the same as your TSO ID.  Using the TSO ID as the high-level qualifier of the installation of the MVS datasets simplifies the installation.
+The prefix for the MVS datasets is the same as your TSO ID.  Using the TSO ID as the high-level qualifier of the installation of the MVS datasets simplifies the installation.
 
 Copy the following JCL and paste it into a JCL library member in your mainframe session:
 ```
@@ -104,13 +105,13 @@ Copy the following JCL and paste it into a JCL library member in your mainframe 
 ```
 Update the JOB statement above to conform to your installation's standards. Set the value of HLQ above to your TSO Prefix. Submit the job to expand the transfer data sets into the installation data sets.
 
-## Allocate USS directory to contain RCA .jar file
+## Allocate z/OS UNIX directory to contain RCA .jar file
 
-Logging onto USS use mkdir to create a directory under your user ID
+Logon to z/OS UNIX and use mkdir to create a directory under your user ID
 ```
-mkdir /u/<userid>/git/public/RCA_jar
+mkdir /u/<userid>/RCA
 ```
-## Copy RCA .jar file to USS directory
+## Copy RCA .jar file to z/OS UNIX directory
 
 Using your preferred file transfer technique, upload the following file in binary mode from your local drive to the zFS file system of your mainframe:
 ```
@@ -137,7 +138,7 @@ Update the JCL in \<your-tso-prefix\>.GVBDEMO.JCL(GENDATA) according to the comm
 - \<your-tso-prefix>\.GVBDEMO.CUSTADDR
 - \<your-tso-prefix>\.GVBDEMO.STOREADR
 
-## GVBDEMO JCL
+## Run the DEMO JCL
 
 The DEMO itself comprises the following 4 jobs:
 

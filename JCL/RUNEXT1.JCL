@@ -111,7 +111,7 @@ export IBM_JAVA_OPTIONS="-Dfile.encoding=ISO8859-1"
 
 # specify location of your RCA applications (GERS_RCA_JAR_DIR) below
 
-export APP_HOME=/u/<userid>/git/public/RCA_jar
+export APP_HOME=/u/<userid>/RCA
 
 export APP_NAME=rcapps-latest.jar
 export CLASSPATH=$APP_HOME:"$JAVA_HOME"/lib
