@@ -35,9 +35,9 @@
 //*        SET HLQ=<YOUR-TSO-PREFIX>
 //         SET MLQ=GVBDEMO
 //         SET LOADLIB=&HLQ..&MLQ..GVBLOAD
-//         SET JZOSLIB=AJV.V11R0M0.SIEALNKE
+//         SET JZOSLIB=AJV.V21R0M0.SIEALNKE
 //*
-//         JCLLIB ORDER=AJV.V11R0M0.PROCLIB
+//         JCLLIB ORDER=AJV.V21R0M0.PROCLIB
 //*
 //*********************************************************************
 //*
@@ -100,13 +100,13 @@
 //*
 //*******************************************************************
 //*
-//JAVA EXEC PROC=JVMPRC16,
+//JAVA EXEC PROC=JVMPRC21,
 // JAVACLS='org.genevaers.rcapps.Runner'
 //STEPLIB  DD DISP=SHR,DSN=&JZOSLIB
 //STDENV DD *,SYMBOLS=EXECSYS
 . /etc/profile
 export A2E=-ofrom=ISO8859-1,to=IBM-1047
-export JAVA_HOME=/Java/J17.0_64
+export JAVA_HOME=/Java/J21.0_64
 export IBM_JAVA_OPTIONS="-Dfile.encoding=ISO8859-1"
 
 # specify location of your RCA applications (GERS_RCA_JAR_DIR) below
@@ -202,7 +202,7 @@ NUMBER_MODE=STANDARD
 //*********************************************************************
 //*
 //PSTEP206 EXEC PGM=GVBUT99,
-//            COND=(4,GE,JAVA),
+//            COND=(4,GE),
 //            PARM='1099'
 //STEPLIB  DD DISP=SHR,DSN=&LOADLIB
 //SYSPRINT DD SYSOUT=*
